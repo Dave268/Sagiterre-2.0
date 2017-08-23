@@ -26,12 +26,12 @@
     <section id="content">
         <div class="camera_container">
             <div id="camera" class="camera_wrap">
-                <div data-src="images/slide/slide3.png">
-                </div>
-                <div data-src="images/slide/slide2.png">
-                </div>
-                <div data-src="images/slide/slide4.png">
-                </div>
+                {% for slideImage in slideImages%}
+                    <div data-src="{{ slideImage.path }}" alt="{{ slideImage.alt }}">
+                    </div>
+                {% else %}
+                    <h2>Il n'y pas d'images</h2>
+                {% endfor %}
             </div>
         </div>
 

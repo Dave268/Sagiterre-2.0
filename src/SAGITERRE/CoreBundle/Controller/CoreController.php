@@ -9,10 +9,12 @@ class CoreController extends Controller
 {
     public function indexAction()
     {
-        $WelcomeMessage  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:WelcomeMessage')->findOneBy(array('active' => '1'));
+        $welcomeMessage  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:WelcomeMessage')->findOneBy(array('active' => '1'));
+        $slideImages = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SlideImage')->findBy(array('active' => '1'));
 
         return $this->render('SAGITERRECoreBundle:core:index.html.twig', array(
-            'WelcomeMessage' => $WelcomeMessage
+            'WelcomeMessage'    => $welcomeMessage,
+            'slideImages'       =>$slideImages
         ));
     }
 }
