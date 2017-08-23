@@ -1,0 +1,3 @@
+sagiterre_layout_homepage:
+    path:     /layout
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:index }

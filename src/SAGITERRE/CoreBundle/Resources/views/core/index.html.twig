@@ -1,0 +1,266 @@
+{# src/SAGITERRE/CoreBundle/Resources/views/core/index.html.twig #}
+
+{% extends "SAGITERRECoreBundle::layout.html.twig" %}
+
+{% block title %}
+    Acceuil
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact-form.css">
+    <link rel="stylesheet" href="css/camera.css"/>
+    <link rel="stylesheet" href="css/jquery.fancybox.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.2.1.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/TMForm.js"></script>
+{% endblock %}
+
+
+{% block body %}
+    <section id="content">
+        <div class="camera_container">
+            <div id="camera" class="camera_wrap">
+                <div data-src="images/slide/slide3.png">
+                </div>
+                <div data-src="images/slide/slide2.png">
+                </div>
+                <div data-src="images/slide/slide4.png">
+                </div>
+            </div>
+        </div>
+
+        <!-- stellar layout -->
+        <div class="bg-secondary1 bg-pl">
+            <div class="container cont-1">
+                <div class="row">
+                    <div class="grid_12 wow fadeInUp" data-wow-delay="0.2s">
+                        <h2 class='well center h-cont'>{{ WelcomeMessage.title }}</h2>
+                        <p class='center sl-cont'>{{ WelcomeMessage.subtitle }}</p>
+                    </div><!--/grid-->
+                    <div class="grid_4 wow fadeInLeft" data-wow-delay="0.4s">
+                        <!--<div class="grid_1 box-cont1  mrg0">
+                            <img src="images/page-1_img01d.jpg" alt="pic">
+                        </div>--><!--/grid-->
+
+                        <div class="grid_3">
+                            <p class='icon-box-cont'>{{ WelcomeMessage.columnOne }}</p>
+                        </div><!--/grid-->
+                    </div><!--/grid-->
+                    <div class="grid_4 wow fadeInUp" data-wow-delay="0.4s">
+                        <!--<div class="grid_1 box-cont1 mrg0">
+                            <img src="images/page-1_img02d.jpg" alt="pic">
+                        </div>-->
+                        <!--/grid-->
+                        <div class="grid_3">
+                            <p class='icon-box-cont'>{{ WelcomeMessage.columnTwo }}
+                            </p>
+                        </div><!--/grid-->
+                    </div><!--/grid-->
+                    <div class="grid_4 wow fadeInRight" data-wow-delay="0.4s">
+                        <!--<div class="grid_1 box-cont1 mrg0">
+                            <img src="images/page-1_img03d.jpg" alt="pic">
+                        </div>-->
+                        <!--/grid-->
+                        <div class="grid_3">
+                            <p class='icon-box-cont'>{{ WelcomeMessage.columnThree }}</p>
+                        </div><!--/grid-->
+                    </div><!--/grid-->
+                </div>
+            </div>
+        </div>
+        <!-- end stellar layout -->
+
+        <!-- Owl Carousel -->
+        <div class="bg-secondary2">
+            <div class="container">
+                <div class="row">
+                    <div class="wow well_cont1 fadeInUp" data-wow-delay="0.2s">
+                        <div class="grid_1">
+                            <img src="images/icons/logo.png" alt="ico">
+                        </div><!--/grid-->
+                        <h3 class='left h-icon'>Le troupeau</h3>
+                        <p class='sl-cont2 left'>C'est grace à eux que nous allons allez plus loin!</p>
+                    </div><!--/grid-->
+                    <div class="owl-wrap">
+                        <div id="owl1">
+                            <div class="owl-block">
+                                <a class="dec0" href="#"><img class="gall1_pic" alt="gallery" src="images/chevaux/venus.png"><span class='gall-cont gall-slogan'>Venus</span></a>
+
+                            </div>
+                            <div class="owl-block">
+                                <a class="dec0" href="#"><img class="gall1_pic" alt="gallery" src="images/chevaux/canelle.png"><span class='gall-cont gall-slogan'>Canelle</span></a>
+
+                            </div>
+                            <div class="owl-block">
+                                <a class="dec0" href="#"><img class="gall1_pic" alt="gallery" src="images/chevaux/gramoun.png"><span class='gall-cont gall-slogan'>Gramoun</span></a>
+
+                            </div>
+                            <div class="owl-block">
+                                <a class="dec0" href="#"><img class="gall1_pic" alt="gallery" src="images/chevaux/chesta.png"><span class='gall-cont gall-slogan'>Chesta</span></a>
+
+                            </div>
+                            <div class="owl-block">
+                                <a class="dec0" href="#"><img class="gall1_pic" alt="gallery" src="images/chevaux/guerane.png"><span class='gall-cont gall-slogan'>Guérane</span></a>
+
+                            </div>
+                            <!--<div class="owl-block">
+                                <a class="dec0" href="#"><img class="gall1_pic" alt="gallery" src="images/chevaux/venus.png"><span class='gall-cont gall-slogan'>Detur mutati<br>
+                                onem consuetu</span></a>
+
+                            </div>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- end Owl Carousel -->
+
+        <div class="bg-secondary1">
+            <div class="container">
+                <div class="row">
+                    <div class="grid_12 wow fadeInUp well_cont1" data-wow-delay="0.2s">
+
+                        <div class="grid_4 mrg0 hidd">
+                            <div class="grid_1 mrg0">
+                                <img src="images/page-1_ico-2.png" alt="ico">
+                            </div><!--/grid-->
+                            <h3 class='left h-icon'>Qui sommes-nous</h3>
+                            <p class='sl-cont3 left'>Les chevaux, un merveilleux mirroir</p>
+                            <img src="images/about/Untitled 8.jpg" alt="pic">
+                            <p class='left box-cont2'>Sagi-Terre souhaite contribuer à un monde où l'humain cultive un lien sensible et bienveillant au vivant qui l'entoure et à lui-même. Nous pensons que cela passe, entre autre, par une meilleure connaissance de soi, de notre nature profonde d'humain. Nous proposons des moments d'exploration au travers:
+                                de l'hippothérapie (avec les chevaux),
+                                de stages et ateliers pour enfants et adultes,
+                                de la méthode de Libération des Cuirasses,
+                                d'un accompagnement individualisé.</p>
+                        </div><!--/grid-->
+
+                        <div class="grid_4 hidd">
+                            <div class="grid_1 mrg0">
+                                <img src="images/page-1_ico-3.png" alt="ico">
+                            </div><!--/grid-->
+                            <h3 class='left h-icon'>Notre Histoire</h3>
+                            <p class='sl-cont3 left'>Une équipe de passionés</p>
+                            <img src="images/about/IMG_1533.JPG" alt="pic">
+                            <p class='left box-cont2'>Après 7 années de travail en hippothérapie à la Ferme Équestre de Louvain la Neuve, un nouveau tournant s'est présenté. J'avais soif d'indépendance, de découvertes toujours plus loin dans ces domaines de l'humain, de l'énergétique, de la nature, de l'animal, ... et j'ai décidé de suivre cet appel. J'ai travaillé deux ans en tant qu'indépendante, toujours dans l'accompagnement des personnes par la relation au cheval dans un magnifique endroit qui me permettait de travailler avec des chevaux en prairie, dans des grands espaces.</p>
+                        </div><!--/grid-->
+
+                        <div class="grid_4 hidd">
+                            <div class="grid_1 mrg0">
+                                <img src="images/icons/leaf_logo.png" alt="ico">
+                            </div><!--/grid-->
+                            <h3 class='left h-icon'>Dame Nature</h3>
+                            <p class='sl-cont3 left'>Une approche de la nature et de soi</p>
+                            <img src="images/about/page-1_img04.jpg" alt="pic" >
+                            <p class='left box-cont2'>C'est riche de tout ce cheminement et dans la simplicité de ce que je suis devenue aujourd'hui que j'aime partager des moments sous forme d'ateliers, de stages, de rencontres individuelles, ... J'aime observer et vivre dans ce lieu avec ses chevaux et ses habitants, avec toutes les personnes qui y passent plus ou moins longtemps, j'aime conduire ce navire si vivant, si subtile et en même temps si simple. Tout y est, il n'y a plus qu'à y goûter, à recevoir, à vivre.</p>
+                        </div><!--/grid-->
+                    </div><!--/grid-->
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-secondary2">
+            <div class="container">
+                <div class="row">
+                    <div class="grid_12 wow fadeInUp well_cont1" data-wow-delay="0.2s">
+                        <div class="grid_6 mrg0">
+                            <div class="grid_1 mrg0">
+                                <img src="images/icons/logo.png" alt="ico">
+                            </div><!--/grid-->
+                            <h3 class='left h-icon'>Les Dernieres News</h3>
+                            <p class='sl-cont2 left'>A ne pas manquer!</p>
+                            <div class="cont-block1">
+                                <div class="grid_2 mrg0 hidd">
+                                    <div class="pic-hov"></div>
+                                    <img class="c-block-pic" src="images/page-1_crs1_p3.jpg" alt="pic">
+                                </div><!--/grid-->
+                                <p class='left c-block-h'>Dusto odio dignissim qui blandit<br>
+                                    praesent luptaum</p>
+                                <p class='c-block-date'>21<br>
+                                    09</p>
+                                <p class='left c-block-dis'>Set accumsan et iusto odio dignissim qui blandit praesent luptaum zzelenit augue duis dolore te feugait nulla facilisi. Typi non habent claritatem</p>
+                                <a class="c-block-a" href="#">More</a>
+                            </div>
+                        </div><!--/grid-->
+
+                        <div class="grid_6">
+                            <div class="cont-block1 cont-bl2">
+                                <div class="grid_2 mrg0 hidd">
+                                    <div class="pic-hov"></div>
+                                    <img class="c-block-pic" src="images/page-1_crs1_p5.jpg" alt="pic">
+                                </div><!--/grid-->
+                                <p class='left c-block-h'>Dusto odio dignissim qui blandit<br>
+                                    praesent luptaum</p>
+                                <p class='c-block-date'>21<br>
+                                    09</p>
+                                <p class='left c-block-dis'>Set accumsan et iusto odio dignissim qui blandit praesent luptaum zzelenit augue duis dolore te feugait nulla facilisi. Typi non habent claritatem</p>
+                                <a class="c-block-a" href="#">More</a>
+                            </div>
+                        </div><!--/grid-->
+                    </div><!--/grid-->
+                </div>
+            </div>
+        </div>
+
+        <!-- Owl Carousel -->
+        <div class="bg-secondary1">
+            <div class="container">
+                <div class="row">
+                    <div class="wow well_cont1 fadeInUp" data-wow-delay="0.2s">
+                        <div class="grid_1" >
+                            <img src="images/page-1_ico-6.png" alt="ico">
+                        </div><!--/grid-->
+                        <h3 class='left h-icon'>Gallery</h3>
+                        <p class='sl-cont2 left'>Typi non habent cla</p>
+                    </div><!--/grid-->
+                    <div class="owl-wrap">
+                        <div id="owl2" class="owl-carousel2">
+
+                            <a class="owl-block thumb" href="images/Gallerie/Untitled 1.png">
+                                <img class="gall2_pic" src="images/Gallerie/Untitled 1.png" alt="gallery"/>
+                                <span class="thumb_overlay"></span>
+                            </a>
+
+                            <a class="owl-block thumb" href="images/Gallerie/Untitled 2.png">
+                                <img class="gall2_pic" src="images/Gallerie/Untitled 2.png" alt="gallery"/>
+                                <span class="thumb_overlay"></span>
+                            </a>
+
+                            <a class="owl-block thumb" href="images/Gallerie/Untitled 3.png">
+                                <img class="gall2_pic" src="images/Gallerie/Untitled 3.png" alt="gallery"/>
+                                <span class="thumb_overlay"></span>
+                            </a>
+
+                            <a class="owl-block thumb" href="images/Gallerie/Untitled 4.png">
+                                <img class="gall2_pic" src="images/Gallerie/Untitled 4.png" alt="gallery"/>
+                                <span class="thumb_overlay"></span>
+                            </a>
+
+                            <a class="owl-block thumb" href="images/Gallerie/Untitled 5.png">
+                                <img class="gall2_pic" src="images/Gallerie/Untitled 5.png" alt="gallery"/>
+                                <span class="thumb_overlay"></span>
+                            </a>
+
+                            <a class="owl-block thumb" href="images/Gallerie/Untitled 6.png">
+                                <img class="gall2_pic" src="images/Gallerie/Untitled 6.png" alt="gallery"/>
+                                <span class="thumb_overlay"></span>
+                            </a>
+
+                            <a class="owl-block thumb" href="images/Gallerie/Untitled 7.jpg">
+                                <img class="gall2_pic" src="images/Gallerie/Untitled 7.jpg" alt="gallery"/>
+                                <span class="thumb_overlay"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end Owl Carousel -->
+{% endblock %}

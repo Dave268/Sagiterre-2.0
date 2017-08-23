@@ -1,0 +1,9 @@
+sagiterre_layout:
+    resource: "@SAGITERRELayoutBundle/Resources/config/routing.yml"
+    prefix:   /
+
+sagiterre_core:
+    resource: "@SAGITERRECoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

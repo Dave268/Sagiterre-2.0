@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sagi-terre: {% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name = "format-detection" content = "telephone=no" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    {% block head %}{% endblock %}
+
+
+    <!--[if lt IE 9]>
+    <html class="lt-ie9">
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+        </a>
+    </div>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+
+<body>
+<!--========================================================
+                                                       HEADER
+   =========================================================-->
+<header id="header" class='header' data-stellar-background-ratio="0.2">
+    <div id="stuck_container" class="stuck_container">
+        <div class="bg"></div>
+        <div class="container">
+            <div class="logo_container"><a href="index.html"><img src="images/logo_sagiterre.png" alt="logo" /></a>
+            </div>
+
+            <nav class='nav'>
+                <ul class="sf-menu">
+                    <li class="current"><a href="index.html">Acceuil</a></li>
+                    <li><a href="index-1.html">A propos</a>
+                    <li><a href="index-2.html">Activités</a></li>
+                    <li><a href="index-3.html">News</a></li>
+                    <li><a href="index-4.html">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+<!--========================================================
+                        CONTENT
+=========================================================-->
+
+{% block body %}{% endblock %}
+
+
+    <div class='parall' data-stellar-background-ratio="0.8">
+        <div class="container ">
+            <div class="row ">
+                <div class="grid_12 wow"  >
+                    <h3 class='footer-h center footer-well'>Suivez-nous:</h3>
+                    <ul class="footer-block well2 center">
+                        <li>
+                            <a class="fa fa-twitter" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-facebook" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-google-plus" href="#"></a>
+                        </li>
+                    </ul>
+                </div><!--/grid-->
+                <!-- 1 column layout -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact form -->
+    <div class="map-color">
+    </div>
+    <div class="map-block">
+        <div id="google-map" class="map">
+        </div>
+    </div>
+    <div class="grd-h-0">
+        <div class="container ">
+            <div class="row">
+                <div class="grid_12">
+                    <div class="contact-pref contact-pos">
+
+                        <div class="contact-block">
+                            <h3 class='footer-h well3 center'>Contactez-nous:</h3>
+                            <form id="contact-form" class='contact-form off1'>
+                                <div class="contact-form-loader"></div>
+                                <fieldset>
+                                    <label class="name">
+                                        <input type="text" name="name" placeholder="Name" value=""
+                                               data-constraints="@Required @JustLetters"/>
+                                        <span class="empty-message">*This field is required.</span>
+                                        <span class="error-message">*This is not a valid name.</span>
+                                    </label>
+
+
+                                    <label class="email">
+                                        <input type="text" name="email" placeholder="E-mail" value=""
+                                               data-constraints="@Required @Email"/>
+                                        <span class="empty-message">*This field is required.</span>
+                                        <span class="error-message">*This is not a valid email.</span>
+                                    </label>
+
+                                    <label class="phone">
+                                        <input type="text" name="phone" placeholder="Phone" value=""
+                                               data-constraints="@JustNumbers"/>
+                                        <span class="empty-message">*This field is required.</span>
+                                        <span class="error-message">*This is not a valid phone.</span>
+                                    </label>
+                                    <label class="message">
+							                        <textarea name="message" placeholder="Message"
+                                                              data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+                                        <span class="empty-message">*This field is required.</span>
+                                        <span class="error-message">*The message is too short.</span>
+                                    </label>
+                                    <div class="btn-wr">
+                                        <a class="btn btn__mod" href="#" data-type="submit">send</a>
+                                    </div>
+                                </fieldset>
+                                <div class="modal fade response-message">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">
+                                                    &times;
+                                                </button>
+                                                <h4 class="modal-title">Modal title</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                You message has been sent! We will be in touch soon.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div><!--/grid-->
+                </div>
+            </div><!--/grid-->
+        </div>
+    </div>
+</section>
+
+<!--========================================================
+                                                    FOOTER
+=========================================================-->
+<div class="grid_12 center">
+</div><script src="js/script.js"></script>
+</body>
+</html>
