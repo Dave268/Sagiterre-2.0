@@ -284,4 +284,28 @@ class WelcomeMessage
     {
         return $this->version;
     }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     *
+     * @return WelcomeMessage
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
 }

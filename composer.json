@@ -6,7 +6,9 @@
         "psr-4": {
             "AppBundle\\": "src/AppBundle",
             "SAGITERRE\\CoreBundle\\": "src/SAGITERRE/CoreBundle",
-            "SAGITERRE\\LayoutBundle\\": "src/SAGITERRE/LayoutBundle"
+            "SAGITERRE\\LayoutBundle\\": "src/SAGITERRE/LayoutBundle",
+            "SAGITERRE\\UserBundle\\": "src/SAGITERRE/UserBundle",
+            "SAGITERRE\\AdminBundle\\": "src/SAGITERRE/AdminBundle"
         },
         "classmap": [
             "app/AppKernel.php",

@@ -13,7 +13,7 @@
     <html class="lt-ie9">
     <div style=' clear: both; text-align:center; position: relative;'>
         <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
-            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+            <img src="{{ asset('images/ie8-panel/warning_bar_0000_us.jpg') }}" border="0" height="42" width="820"
                  alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
         </a>
     </div>
@@ -30,7 +30,7 @@
     <div id="stuck_container" class="stuck_container">
         <div class="bg"></div>
         <div class="container">
-            <div class="logo_container"><a href="index.html"><img src="images/logo_sagiterre.png" alt="logo" /></a>
+            <div class="logo_container"><a href="index.html"><img src="{{ asset('images/logo_sagiterre.png') }}" alt="logo" /></a>
             </div>
 
             <nav class='nav'>
@@ -53,6 +53,7 @@
 <!--========================================================
                         CONTENT
 =========================================================-->
+<section id="content">
 
 {% block body %}{% endblock %}
 
@@ -157,6 +158,6 @@
                                                     FOOTER
 =========================================================-->
 <div class="grid_12 center">
-</div><script src="js/script.js"></script>
+</div><script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

@@ -50,11 +50,16 @@ class SectionFour
     private $dateUpdate;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="version", type="string", length=255, unique=true)
+     * @ORM\Column(name="active", type="boolean", nullable=true)
      */
-    private $version;
+    private $active = true;
+
+    public function __construct()
+    {
+        $this->dateAdd = new \DateTime();
+    }
 
 
     /**

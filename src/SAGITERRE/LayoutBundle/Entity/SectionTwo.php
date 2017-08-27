@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * SectionTwo
  *
- * @ORM\Table(name="section_two")
+ * @ORM\Table(name="sg_section_two")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\SectionTwoRepository")
  */
 class SectionTwo
@@ -50,11 +50,16 @@ class SectionTwo
     private $dateUpdate;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="version", type="string", length=255, unique=true)
+     * @ORM\Column(name="active", type="boolean", nullable=true)
      */
-    private $version;
+    private $active = true;
+
+    public function __construct()
+    {
+        $this->dateAdd = new \DateTime();
+    }
 
 
     /**
@@ -185,5 +190,29 @@ class SectionTwo
     public function getVersion()
     {
         return $this->version;
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     *
+     * @return SectionTwo
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 }

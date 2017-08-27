@@ -18,6 +18,9 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new SAGITERRE\CoreBundle\SAGITERRECoreBundle(),
             new SAGITERRE\LayoutBundle\SAGITERRELayoutBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new SAGITERRE\UserBundle\SAGITERREUserBundle(),
+            new SAGITERRE\AdminBundle\SAGITERREAdminBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

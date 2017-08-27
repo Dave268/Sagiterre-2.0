@@ -45,9 +45,16 @@ class SectionThreeOne
     /**
      * @var string
      *
-     * @ORM\Column(name="version", type="string", length=255)
+     * @ORM\Column(name="alt", type="string", length=255)
      */
-    private $version;
+    private $imageAlt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=255)
+     */
+    private $imagePath;
 
     /**
      * @var \DateTime
@@ -62,6 +69,18 @@ class SectionThreeOne
      * @ORM\Column(name="dateUpdate", type="datetime", nullable=true)
      */
     private $dateUpdate;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="active", type="boolean", nullable=true)
+     */
+    private $active = true;
+
+    public function __construct()
+    {
+        $this->dateAdd = new \DateTime();
+    }
 
 
     /**
@@ -216,5 +235,77 @@ class SectionThreeOne
     public function getDateUpdate()
     {
         return $this->dateUpdate;
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     *
+     * @return SectionThreeOne
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Set imageAlt
+     *
+     * @param string $imageAlt
+     *
+     * @return SectionThreeOne
+     */
+    public function setImageAlt($imageAlt)
+    {
+        $this->imageAlt = $imageAlt;
+
+        return $this;
+    }
+
+    /**
+     * Get imageAlt
+     *
+     * @return string
+     */
+    public function getImageAlt()
+    {
+        return $this->imageAlt;
+    }
+
+    /**
+     * Set imagePath
+     *
+     * @param string $imagePath
+     *
+     * @return SectionThreeOne
+     */
+    public function setImagePath($imagePath)
+    {
+        $this->imagePath = $imagePath;
+
+        return $this;
+    }
+
+    /**
+     * Get imagePath
+     *
+     * @return string
+     */
+    public function getImagePath()
+    {
+        return $this->imagePath;
     }
 }

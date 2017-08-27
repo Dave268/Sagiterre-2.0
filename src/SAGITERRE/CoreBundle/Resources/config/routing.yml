@@ -1,3 +1,19 @@
 sagiterre_core_homepage:
     path:     /
     defaults: { _controller: SAGITERRECoreBundle:Core:index }
+
+sagiterre_core_about:
+    path:     /apropos
+    defaults: { _controller: SAGITERRECoreBundle:Core:about }
+
+sagiterre_core_activities:
+    path:     /activites
+    defaults: { _controller: SAGITERRECoreBundle:Core:activities }
+
+sagiterre_core_news:
+    path:     /news
+    defaults: { _controller: SAGITERRECoreBundle:Core:news }
+
+sagiterre_core_contact:
+    path:     /contact
+    defaults: { _controller: SAGITERRECoreBundle:Core:contact }

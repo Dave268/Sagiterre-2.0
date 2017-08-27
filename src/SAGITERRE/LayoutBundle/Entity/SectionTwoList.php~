@@ -29,6 +29,13 @@ class SectionTwoList
     private $name;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=255)
+     */
+    private $path;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateAdd", type="datetime")
@@ -41,6 +48,18 @@ class SectionTwoList
      * @ORM\Column(name="dateUpdate", type="datetime", nullable=true)
      */
     private $dateUpdate;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="active", type="boolean")
+     */
+    private $active=1;
+
+    public function __construct()
+    {
+        $this->dateAdd = new \DateTime();
+    }
 
 
     /**
@@ -123,5 +142,53 @@ class SectionTwoList
     public function getDateUpdate()
     {
         return $this->dateUpdate;
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     *
+     * @return SectionTwoList
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     *
+     * @return SectionTwoList
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
     }
 }
