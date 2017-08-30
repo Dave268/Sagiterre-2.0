@@ -1,0 +1,51 @@
+{# src/SAGITERRE/CoreBundle/Resources/views/core/contact.html.twig #}
+
+{% extends "SAGITERRECoreBundle::layout.html.twig" %}
+
+{% block title %}
+    Contact
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('css/grid.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contact-form.css') }}">
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery-migrate-1.2.1.js') }}"></script>
+    <script src="{{ asset('js/modal.js') }}"></script>
+    <script src="{{ asset('js/TMForm.js') }}"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    {% if is_granted('ROLE_USER') %}
+        <script src="{{ asset('bundles/admin/js/script.js') }}"></script>
+    {% endif %}
+
+{% endblock %}
+
+
+{% block body %}
+    <div class="header-parall" data-stellar-background-ratio="0.8">
+    </div>
+    <div class="bg-secondary1">
+        <div class="container">
+            <div class="row">
+                <div class="grid_12 wow fadeInUp well_cont1" data-wow-delay="0.2s">
+                    <div class="grid_1 mrg0">
+                        <img src="{{ asset('images/page-5_ico-1.png') }}" alt="ico">
+                    </div><!--/grid-->
+                    <h3 class='left h-icon'>Notre addresse</h3>
+                    <p class='sl-cont3 left'>Adresse du troupeau</p>
+                    <div class="grid_4 mrg0">
+
+
+                        <p class='left p2-c-block-h3'>rue de la Tour 6,<br>
+                            Nil Pierreux (Walhain)</p>
+                        <p class='left cont-5'>Telephone:                     +32(0)472/259943</p>
+                        <p class="mail">E-mail: <a href="mailto:mail@demolink.org">antoinette@sagiterre.be</a></p>
+                    </div><!--/grid-->
+                </div><!--/grid-->
+            </div>
+        </div>
+    </div>
+{% endblock %}

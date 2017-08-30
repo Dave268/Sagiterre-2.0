@@ -1,0 +1,41 @@
+sagiterre_layout_WM_form:
+    path:     /welcomeMessageForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifyWelcomeMessage, id: 0 }
+    options:
+            expose: true
+
+sagiterre_layout_ST_form:
+    path:     /sectionTwoForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifySectionTwo, id: 0 }
+    options:
+            expose: true
+
+sagiterre_layout_STHO_form:
+    path:     /sectionThreeOneForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifySectionThreeOne, id: 0 }
+    options:
+            expose: true
+
+sagiterre_layout_STHT_form:
+    path:     /sectionThreeTwoForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifySectionThreeTwo, id: 0 }
+    options:
+            expose: true
+
+sagiterre_layout_STHTH_form:
+    path:     /sectionThreeThreeForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifySectionThreeThree, id: 0 }
+    options:
+            expose: true
+
+sagiterre_layout_SF_form:
+    path:     /sectionFourForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifySectionFour, id: 0 }
+    options:
+            expose: true
+
+sagiterre_layout_SFI_form:
+    path:     /sectionFiveForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifySectionFive, id: 0 }
+    options:
+            expose: true

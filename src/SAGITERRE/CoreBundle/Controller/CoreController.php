@@ -14,6 +14,7 @@ use SAGITERRE\LayoutBundle\Entity\SectionThreeThree;
 
 
 
+
 class CoreController extends Controller
 {
     public function indexAction()
@@ -46,7 +47,7 @@ class CoreController extends Controller
         ));
     }
 
-    public function aproposAction()
+    public function aboutAction()
     {
         return $this->render('SAGITERRECoreBundle:core:about.html.twig', array(
         ));

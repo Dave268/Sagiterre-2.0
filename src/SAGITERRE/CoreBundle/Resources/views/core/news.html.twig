@@ -1,0 +1,213 @@
+{# src/SAGITERRE/CoreBundle/Resources/views/core/about.html.twig #}
+
+{% extends "SAGITERRECoreBundle::layout.html.twig" %}
+
+{% block title %}
+    News
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('css/grid.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contact-form.css') }}">
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery-migrate-1.2.1.js') }}"></script>
+    <script src="{{ asset('js/modal.js') }}"></script>
+    <script src="{{ asset('js/TMForm.js') }}"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    {% if is_granted('ROLE_USER') %}
+        <script src="{{ asset('bundles/admin/js/script.js') }}"></script>
+    {% endif %}
+
+{% endblock %}
+
+
+{% block body %}
+    <div class="header-parall" data-stellar-background-ratio="0.8">
+    </div>
+    <div class="bg-secondary1">
+        <div class="container">
+            <div class="row">
+                <div class="grid_12 wow fadeInUp well_cont1" data-wow-delay="0.2s">
+                    <div class="grid_1 mrg0">
+                        <img src="{{ asset('images/page-4_ico-1.png') }}" alt="ico">
+                    </div><!--/grid-->
+                    <h3 class='left h-icon'>Dernières News</h3>
+                    <p class='sl-cont3 left'>Pellentesque rutrum posuere libero</p>
+                    <div class="grid_4 mrg0 hidd">
+                        <img src="{{ asset('images/page-4_img01.jpg') }}" alt="pic">
+                        <p class='sl-cont4 left'>November 10, 2015</p>
+                        <p class='left p2-c-block-h3'>Quisque consectetur id lectus eu faucibus.</p>
+                        <p class='left'>Set accumsan et iusto odio dignissim qui blandit praesent luptaum zzelenit augue duis dolore te feugait nulla facilisi. Typi non habent claritatem.</p>
+                        <a class="p2-c-block-a" href="#">More</a>
+                    </div><!--/grid-->
+
+                    <div class="grid_4 hidd">
+
+                        <img src="{{ asset('images/page-4_img02.jpg') }}" alt="pic">
+                        <p class='sl-cont4 left'>November 12, 2015</p>
+                        <p class='left p2-c-block-h3'>Vivamus elementum blandit massa.</p>
+                        <p class='left'>Est usus legentis in iis qui facit eorum claritatem ves
+                            tigationes de non habent claritatonstraverunt lectores legere me lius quoii legunt saepius. </p>
+                        <a class="p2-c-block-a" href="#">More</a>
+                    </div><!--/grid-->
+
+                    <div class="grid_4 hidd">
+
+                        <img src="{{ asset('images/page-4_img03.jpg') }}" alt="pic" >
+                        <p class='sl-cont4 left'>November 16, 2015</p>
+                        <p class='left p2-c-block-h3'>Nunc elementum quis dui sit amet.</p>
+                        <p class='left'>Straverunt lectores legere me lius quoii legunt saepius.
+                            qui sequitur mutationem consuetudium lectorum. mirum est notare quam.</p>
+                        <a class="p2-c-block-a" href="#">More</a>
+                    </div><!--/grid-->
+                </div><!--/grid-->
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-secondary2">
+        <div class="container">
+            <div class="row">
+                <div class="grid_12 wow fadeInUp well_cont1" data-wow-delay="0.2s">
+                    <div class="grid_6 mrg0">
+                        <div class="grid_1 mrg0">
+                            <img src="{{ asset('images/page-4_ico-2.png') }}" alt="ico">
+                        </div><!--/grid-->
+                        <h3 class='left h-icon'>News</h3>
+                        <p class='sl-cont2 left'>Aliquam ullamcorper arcu</p>
+                        <div class="cont-block1">
+                            <div class="grid_2 mrg0 hidd">
+                                <div class="pic-hov"></div>
+                                <img class="c-block-pic" src="{{ asset('images/page-4_img04.jpg') }}" alt="pic">
+                            </div><!--/grid-->
+                            <p class='left c-block-h'>Dusto odio dignissim qui blandit<br>
+                                praesent luptaum</p>
+                            <p class='c-block-date'>01<br>
+                                03</p>
+                            <p class='left c-block-dis'>Set accumsan et iusto odio dignissim qui blandit praesent luptaum zzelenit augue duis dolore te feugait nulla facilisi. Typi non habent claritatem</p>
+                            <a class="c-block-a" href="#">More</a>
+                        </div>
+                    </div><!--/grid-->
+
+                    <div class="grid_6">
+                        <div class="cont-block1 cont-bl2">
+                            <div class="grid_2 mrg0 hidd">
+                                <div class="pic-hov"></div>
+                                <img class="c-block-pic" src="{{ asset('images/page-4_img05.jpg') }}" alt="pic">
+                            </div><!--/grid-->
+                            <p class='left c-block-h'>Nulla pellentesque, quam sed venena
+                                tis bibendum, magna lectus.</p>
+                            <p class='c-block-date'>02<br>
+                                04</p>
+                            <p class='left c-block-dis'>Set accumsan et iusto odio dignissim qui blandit praesent luptaum zzelenit augue duis dolore te feugait nulla facilisi. Typi non habent claritatem</p>
+                            <a class="c-block-a" href="#">More</a>
+                        </div>
+                    </div><!--/grid-->
+
+                    <div class="grid_6 mrg0">
+                        <div class="cont-block1">
+                            <div class="grid_2 mrg0 hidd">
+                                <div class="pic-hov"></div>
+                                <img class="c-block-pic" src="{{ asset('images/page-4_img06.jpg') }}" alt="pic">
+                            </div><!--/grid-->
+                            <p class='left c-block-h'>Proin convallis dolor diam. Fusce effic
+                                itur egestas diam, aliquet. </p>
+                            <p class='c-block-date'>03<br>
+                                04</p>
+                            <p class='left c-block-dis'>Set accumsan et iusto odio dignissim qui blandit praesent luptaum zzelenit augue duis dolore te feugait nulla facilisi. Typi non habent claritatem</p>
+                            <a class="c-block-a" href="#">More</a>
+                        </div>
+                    </div><!--/grid-->
+
+                    <div class="grid_6">
+                        <div class="cont-block1">
+                            <div class="grid_2 mrg0 hidd">
+                                <div class="pic-hov"></div>
+                                <img class="c-block-pic" src="{{ asset('images/page-4_img07.jpg') }}" alt="pic">
+                            </div><!--/grid-->
+                            <p class='left c-block-h'>Ermentum lacus, vel accumsan diam
+                                lobortis lacinia nisl quis scele.</p>
+                            <p class='c-block-date'>05<br>
+                                09</p>
+                            <p class='left c-block-dis'>Set accumsan et iusto odio dignissim qui blandit praesent luptaum zzelenit augue duis dolore te feugait nulla facilisi. Typi non habent claritatem</p>
+                            <a class="c-block-a" href="#">More</a>
+                        </div>
+                    </div><!--/grid-->
+
+                    <div class="grid_6 mrg0">
+                        <div class="cont-block1">
+                            <div class="grid_2 mrg0 hidd">
+                                <div class="pic-hov"></div>
+                                <img class="c-block-pic" src="{{ asset('images/page-4_img08.jpg') }}" alt="pic">
+                            </div><!--/grid-->
+                            <p class='left c-block-h'>Curabitur erat diam, dapibus eget effic
+                                itur vel, pretium ac lorem. </p>
+                            <p class='c-block-date'>06<br>
+                                10</p>
+                            <p class='left c-block-dis'>Set accumsan et iusto odio dignissim qui blandit praesent luptaum zzelenit augue duis dolore te feugait nulla facilisi. Typi non habent claritatem</p>
+                            <a class="c-block-a" href="#">More</a>
+                        </div>
+                    </div><!--/grid-->
+
+                    <div class="grid_6">
+                        <div class="cont-block1">
+                            <div class="grid_2 mrg0 hidd">
+                                <div class="pic-hov"></div>
+                                <img class="c-block-pic" src="{{ asset('images/page-4_img09.jpg') }}" alt="pic">
+                            </div><!--/grid-->
+                            <p class='left c-block-h'>Praesent pharetra nisl vel accumsan
+                                tpat. Phasellus semper.</p>
+                            <p class='c-block-date'>07<br>
+                                11</p>
+                            <p class='left c-block-dis'>Set accumsan et iusto odio dignissim qui blandit praesent luptaum zzelenit augue duis dolore te feugait nulla facilisi. Typi non habent claritatem</p>
+                            <a class="c-block-a" href="#">More</a>
+                        </div>
+                    </div><!--/grid-->
+                </div><!--/grid-->
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-secondary1">
+        <div class="container">
+            <div class="row">
+                <div class="grid_12 wow fadeInUp well-h3 mrg0" data-wow-delay="0.2s">
+                    <div class="grid_1">
+                        <img src="{{ asset('images/page-4_ico-3.png') }}" alt="ico">
+                    </div><!--/grid-->
+                    <h3 class='left h-icon'>news archives</h3>
+                    <p class='p2-sl-cont2 left padd-right'>Praesent fermentum sit amet</p>
+                    <div class="grid_4 p2-c-block-h4">
+                        <a class='left arr-cont' href="#">January 2014 </a>
+                        <a class='left arr-cont' href="#">February 2014 </a>
+                        <a class='left arr-cont' href="#">March 2014 </a>
+                        <a class='left arr-cont' href="#">April 2014 </a>
+                        <a class='left arr-cont' href="#">May 2014 </a>
+                        <a class='left arr-cont' href="#">June 2014 </a>
+                    </div><!--/grid-->
+
+                    <div class="grid_4 p2-c-block-h4">
+                        <a class='left arr-cont' href="#">July 2014 </a>
+                        <a class='left arr-cont' href="#">August 2014 </a>
+                        <a class='left arr-cont' href="#">September 2014 </a>
+                        <a class='left arr-cont' href="#">October 2014 </a>
+                        <a class='left arr-cont' href="#">November 2014 </a>
+                        <a class='left arr-cont' href="#">December 2014 </a>
+                    </div><!--/grid-->
+
+                    <div class="grid_4 p2-c-block-h4">
+                        <a class='left arr-cont' href="#">January 2013 </a>
+                        <a class='left arr-cont' href="#">February 2013 </a>
+                        <a class='left arr-cont' href="#">March 2013 </a>
+                        <a class='left arr-cont' href="#">April 2013 </a>
+                        <a class='left arr-cont' href="#">May 2013 </a>
+                        <a class='left arr-cont' href="#">June 2013 </a>
+                    </div><!--/grid-->
+                </div><!--/grid-->
+            </div>
+        </div>
+    </div>
+{% endblock %}

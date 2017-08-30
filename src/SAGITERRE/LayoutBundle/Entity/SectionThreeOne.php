@@ -166,30 +166,6 @@ class SectionThreeOne
     }
 
     /**
-     * Set version
-     *
-     * @param string $version
-     *
-     * @return SectionThreeOne
-     */
-    public function setVersion($version)
-    {
-        $this->version = $version;
-
-        return $this;
-    }
-
-    /**
-     * Get version
-     *
-     * @return string
-     */
-    public function getVersion()
-    {
-        return $this->version;
-    }
-
-    /**
      * Set dateAdd
      *
      * @param \DateTime $dateAdd

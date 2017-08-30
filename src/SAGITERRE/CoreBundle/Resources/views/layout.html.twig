@@ -35,11 +35,11 @@
 
             <nav class='nav'>
                 <ul class="sf-menu">
-                    <li class="current"><a href="index.html">Acceuil</a></li>
-                    <li><a href="index-1.html">A propos</a>
-                    <li><a href="index-2.html">Activités</a></li>
-                    <li><a href="index-3.html">News</a></li>
-                    <li><a href="index-4.html">Contacts</a></li>
+                    <li {% if app.request.get('_route') == 'sagiterre_core_homepage' %} class="current" {% endif %}><a href="{{ path('sagiterre_core_homepage') }}">Acceuil</a></li>
+                    <li {% if app.request.get('_route') == 'sagiterre_core_about' %} class="current" {% endif %}><a href="{{ path('sagiterre_core_about') }}">A propos</a>
+                    <li {% if app.request.get('_route') == 'sagiterre_core_activities' %} class="current" {% endif %}><a href="{{ path('sagiterre_core_activities') }}">Activités</a></li>
+                    <li {% if app.request.get('_route') == 'sagiterre_core_news' %} class="current" {% endif %}><a href="{{ path('sagiterre_core_news') }}">News</a></li>
+                    <li {% if app.request.get('_route') == 'sagiterre_core_contact' %} class="current" {% endif %}><a href="{{ path('sagiterre_core_contact') }}">Contacts</a></li>
                 </ul>
             </nav>
         </div>

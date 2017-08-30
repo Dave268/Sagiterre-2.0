@@ -1,0 +1,160 @@
+{# src/SAGITERRE/CoreBundle/Resources/views/core/activities.html.twig #}
+
+{% extends "SAGITERRECoreBundle::layout.html.twig" %}
+
+{% block title %}
+    Activités
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('css/grid.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contact-form.css') }}">
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery-migrate-1.2.1.js') }}"></script>
+    <script src="{{ asset('js/modal.js') }}"></script>
+    <script src="{{ asset('js/TMForm.js') }}"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    {% if is_granted('ROLE_USER') %}
+        <script src="{{ asset('bundles/admin/js/script.js') }}"></script>
+    {% endif %}
+
+{% endblock %}
+
+
+{% block body %}
+    <div class="header-parall" data-stellar-background-ratio="0.8">
+    </div>
+    <div class="bg-secondary2">
+        <div class="container">
+            <div class="row">
+                <div class="grid_12 wow fadeInUp well_cont3" data-wow-delay="0.2s">
+
+                    <div class="grid_1 mrg0">
+                        <img src="{{ asset('images/icons/logo.png') }}" alt="ico">
+                    </div><!--/grid-->
+                    <h3 class='left h-icon'>Nos activités</h3>
+                    <p class='p2-sl-cont left'>Etiam volutpat sollicit</p>
+                    <div class="cont-block-p3">
+                        <div class="grid_4 mrg0 hidd">
+                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img01.jpg') }}" alt="pic"></a>
+                            <p class='left p2-c-block-h2'>Quisque consectetur id lectus eu.</p>
+                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
+                                ait nulla facilisi. Typi non habent clarit insitam. </p>
+                        </div><!--/grid-->
+                    </div>
+
+                    <div class="cont-block-p3">
+                        <div class="grid_4 mrg0 hidd">
+                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img02.jpg') }}" alt="pic"></a>
+                            <p class='left p2-c-block-h2'>Dusto odio dignissim qui blandit.</p>
+                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
+                                ait nulla facilisi. Typi non habent clarit insitam.</p>
+                        </div>
+                    </div><!--/grid-->
+
+                    <div class="cont-block-p3 mrgn-r-0">
+                        <div class="grid_4 mrg0 hidd">
+                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img03.jpg') }}" alt="pic"></a>
+                            <p class='left p2-c-block-h2'>Suspendisse placerat varius ex.</p>
+                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
+                                ait nulla facilisi. Typi non habent clarit insitam. </p>
+                        </div>
+                    </div><!--/grid-->
+
+                    <div class="cont-block-p3">
+                        <div class="grid_4 mrg0 hidd">
+                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img04.jpg') }}" alt="pic"></a>
+                            <p class='left p2-c-block-h2'>Curabitur ornare volutpat sollicitudin.</p>
+                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
+                                ait nulla facilisi. Typi non habent clarit insitam.</p>
+                        </div>
+                    </div><!--/grid-->
+
+                    <div class="cont-block-p3">
+                        <div class="grid_4 mrg0 hidd">
+                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img05.jpg') }}" alt="pic"></a>
+                            <p class='left p2-c-block-h2'>Donec lobortis lacinia nisl quis sceleris.</p>
+                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
+                                ait nulla facilisi. Typi non habent clarit insitam. </p>
+                        </div>
+                    </div><!--/grid-->
+
+                    <div class="cont-block-p3 mrgn-r-0">
+                        <div class="grid_4 mrg0 hidd">
+                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img06.jpg') }}" alt="pic"></a>
+                            <p class='left p2-c-block-h2'>Vivamus elementum blandit massa.</p>
+                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
+                                ait nulla facilisi. Typi non habent clarit insitam. </p>
+                        </div>
+                    </div><!--/grid-->
+
+                    <div class="cont-block-p3">
+                        <div class="grid_4 mrg0 hidd">
+                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img07.jpg') }}" alt="pic"></a>
+                            <p class='left p2-c-block-h2'>Dusto odio dignissim qui blandit.</p>
+                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
+                                ait nulla facilisi. Typi non habent clarit insitam. </p>
+                        </div>
+                    </div><!--/grid-->
+
+                    <div class="cont-block-p3">
+                        <div class="grid_4 mrg0 hidd">
+                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img08.jpg') }}" alt="pic"></a>
+                            <p class='left p2-c-block-h2'>Suspendisse placerat varius ex.</p>
+                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
+                                ait nulla facilisi. Typi non habent clarit insitam. </p>
+                        </div>
+                    </div><!--/grid-->
+
+                    <div class="cont-block-p3 mrgn-r-0">
+                        <div class="grid_4 mrg0 hidd">
+                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img09.jpg') }}" alt="pic"></a>
+                            <p class='left p2-c-block-h2'>Donec eu diam sagittis, gravida neque.</p>
+                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
+                                ait nulla facilisi. Typi non habent clarit insitam. </p>
+                        </div>
+                    </div><!--/grid-->
+                </div><!--/grid-->
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-secondary1">
+        <div class="container">
+            <div class="row">
+                <div class="grid_12 wow fadeInUp well-h3" data-wow-delay="0.2s">
+                    <div class="grid_1 mrg0">
+                        <img src="{{ asset('images/icons/logo.png') }}" alt="ico">
+                    </div><!--/grid-->
+                    <h3 class='left h-icon'>Autres activités</h3>
+                    <p class='p2-sl-cont2 left padd-right'>Nulla pellentesque, quam sed</p>
+                    <div class="grid_4 mrg0">
+                        <p class='left p2-c-block-h3 padd-right'>Proin convallis dolor diam. Fusce effic
+                            itur egestas diam, aliquet. </p>
+                        <p class='left c-block-dis2 padd-right'>Ut porttitor vestibulum suscipit. Maecenas sit amet ex diam. Integer condimentum est vel ornare hendrerit. Suspendisse nec justo hendre. </p>
+                        <a class="p2-c-block-a" href="#">More</a>
+                    </div><!--/grid-->
+
+                    <div class="grid_4">
+                        <p class='left p2-c-block-h3 padd-right'>Curabitur erat diam, dapibus eget efficitur
+                            praesent pharetra nisl vel accu.</p>
+                        <p class='left c-block-dis2 padd-right'>Suspendisse nec justo hendrerit, tempor nulla non, volutpat felis. Fusce cursus fermentum pretium. Pellentesque habitant morbi tristique. </p>
+                        <a class="p2-c-block-a" href="#">More</a>
+                    </div><!--/grid-->
+
+                    <div class="grid_4">
+                        <p class='left p2-c-block-h3 padd-right'>Erat diam, dapibus eget efficitur vel, pretium
+                            nisl vel accumsan volutpat. </p>
+                        <p class='left c-block-dis2 padd-right'>Cras elit enim, scelerisque in tincidunt ut, sodales vel mauris. Integer placerat lorem at est venenatis varius
+                            id vel lectus. Fusce porttitor. </p>
+                        <a class="p2-c-block-a" href="#">More</a>
+                    </div><!--/grid-->
+                </div><!--/grid-->
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

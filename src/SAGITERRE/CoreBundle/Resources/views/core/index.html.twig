@@ -8,7 +8,7 @@
 
 
 {% block head %}
-    <link rel="stylesheet" href="{{ asset('css/grid.css') }}">
+    <link rel="stylesheet" href="../{{ asset('css/grid.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/contact-form.css') }}">
@@ -19,6 +19,8 @@
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('js/modal.js') }}"></script>
     <script src="{{ asset('js/TMForm.js') }}"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
 {% if is_granted('ROLE_USER') %}
     <script src="{{ asset('bundles/admin/js/script.js') }}"></script>
 {% endif %}
@@ -44,8 +46,8 @@
             <div class="container cont-1">
                 <div class="row">
                     <div class="grid_12 wow fadeInUp" data-wow-delay="0.2s">
-                        <h2 class='well center h-cont textToModify'>{{ WelcomeMessage.title }}</h2>
-                        <p class='center sl-cont textToModify'>{{ WelcomeMessage.subtitle }}</p>
+                        <h2 class='well center h-cont textToModify welcome' data-id="{{ WelcomeMessage.id }}" data-part="welcometitle">{{ WelcomeMessage.title }}</h2>
+                        <p class='center sl-cont textToModify welcome' data-id="{{ WelcomeMessage.id }}" data-part="welcomesubtitle">{{ WelcomeMessage.subtitle }}</p>
                     </div><!--/grid-->
                     <div class="grid_4 wow fadeInLeft" data-wow-delay="0.4s">
                         <!--<div class="grid_1 box-cont1  mrg0">
@@ -53,7 +55,7 @@
                         </div>--><!--/grid-->
 
                         <div class="grid_3">
-                            <p class='icon-box-cont textToModify'>{{ WelcomeMessage.columnOne }}</p>
+                            <p class='icon-box-cont textToModify welcome' data-id="{{ WelcomeMessage.id }}" data-part="welcomecolumnone">{{ WelcomeMessage.columnOne }}</p>
                         </div><!--/grid-->
                     </div><!--/grid-->
                     <div class="grid_4 wow fadeInUp" data-wow-delay="0.4s">
@@ -62,7 +64,7 @@
                         </div>-->
                         <!--/grid-->
                         <div class="grid_3">
-                            <p class='icon-box-cont textToModify'>{{ WelcomeMessage.columnTwo }}
+                            <p class='icon-box-cont textToModify welcome' data-id="{{ WelcomeMessage.id }}" data-part="welcomecolumntwo">{{ WelcomeMessage.columnTwo }}
                             </p>
                         </div><!--/grid-->
                     </div><!--/grid-->
@@ -72,7 +74,7 @@
                         </div>-->
                         <!--/grid-->
                         <div class="grid_3">
-                            <p class='icon-box-cont textToModify'>{{ WelcomeMessage.columnThree }}</p>
+                            <p class='icon-box-cont textToModify welcome' data-id="{{ WelcomeMessage.id }}" data-part="welcomecolumnthree">{{ WelcomeMessage.columnThree }}</p>
                         </div><!--/grid-->
                     </div><!--/grid-->
                 </div>
@@ -88,8 +90,8 @@
                         <div class="grid_1">
                             <img src="{{ asset('images/icons/logo.png') }}" alt="ico">
                         </div><!--/grid-->
-                        <h3 class='left h-icon'>{{ sectionTwo.title }}</h3>
-                        <p class='sl-cont2 left'>{{ sectionTwo.subtitle }}</p>
+                        <h3 class='left h-icon textToModify sectiontwo' data-id="{{ sectionTwo.id }}" data-part="sectiontwotitle">{{ sectionTwo.title }}</h3>
+                        <p class='sl-cont2 left textToModify sectiontwo' data-id="{{ sectionTwo.id }}" data-part="sectiontwosubtitle">{{ sectionTwo.subtitle }}</p>
                     </div><!--/grid-->
                     <div class="owl-wrap">
                         <div id="owl1">
@@ -119,30 +121,30 @@
                             <div class="grid_1 mrg0">
                                 <img src="{{ asset('images/page-1_ico-2.png') }}" alt="ico">
                             </div><!--/grid-->
-                            <h3 class='left h-icon textToModify'>{{ sectionThreeOne.title }}</h3>
-                            <p class='sl-cont3 left textToModify'>{{ sectionThreeOne.subtitle }}</p>
+                            <h3 class='left h-icon textToModify sectionthreeone' data-id="{{ sectionThreeOne.id }}" data-part="sectionthreeonetitle">{{ sectionThreeOne.title }}</h3>
+                            <p class='sl-cont3 left textToModify sectionthreeone' data-id="{{ sectionThreeOne.id }}" data-part="sectionthreeonesubtitle">{{ sectionThreeOne.subtitle }}</p>
                             <img src="{{ asset(sectionThreeOne.imagePath) }}" alt="{{ asset(sectionThreeOne.imageAlt) }}">
-                            <p class='left box-cont2 textToModify'>{{ sectionThreeOne.content }}</p>
+                            <p class='left box-cont2 textToModify sectionthreeone' data-id="{{ sectionThreeOne.id }}" data-part="sectionthreeonecontent">{{ sectionThreeOne.content }}</p>
                         </div><!--/grid-->
 
                         <div class="grid_4 hidd">
                             <div class="grid_1 mrg0">
                                 <img src="{{ asset('images/page-1_ico-3.png') }}" alt="ico">
                             </div><!--/grid-->
-                            <h3 class='left h-icon textToModify'>{{ sectionThreeTwo.title }}</h3>
-                            <p class='sl-cont3 left textToModify'>{{ sectionThreeTwo.subtitle }}</p>
+                            <h3 class='left h-icon textToModify sectionthreetwo' data-id="{{ sectionThreeTwo.id }}" data-part="sectionthreetwotitle">{{ sectionThreeTwo.title }}</h3>
+                            <p class='sl-cont3 left textToModify sectionthreetwo' data-id="{{ sectionThreeTwo.id }}" data-part="sectionthreetwosubtitle">{{ sectionThreeTwo.subtitle }}</p>
                             <img src="{{ asset(sectionThreeTwo.imagePath) }}" alt="{{ asset(sectionThreeTwo.imageAlt) }}">
-                            <p class='left box-cont2 textToModify'>{{ sectionThreeOne.content }}</p>
+                            <p class='left box-cont2 textToModify sectionthreetwo' data-id="{{ sectionThreeTwo.id }}" data-part="sectionthreetwocontent">{{ sectionThreeOne.content }}</p>
                         </div><!--/grid-->
 
                         <div class="grid_4 hidd">
                             <div class="grid_1 mrg0">
                                 <img src="{{ asset('images/icons/leaf_logo.png') }}" alt="ico">
                             </div><!--/grid-->
-                            <h3 class='left h-icon textToModify'>{{ sectionThreeThree.title }}</h3>
-                            <p class='sl-cont3 left textToModify'>{{ sectionThreeThree.subtitle }}</p>
+                            <h3 class='left h-icon textToModify sectionthreethree' data-id="{{ sectionThreeThree.id }}" data-part="sectionthreethreetitle">{{ sectionThreeThree.title }}</h3>
+                            <p class='sl-cont3 left textToModify sectionthreethree' data-id="{{ sectionThreeThree.id }}" data-part="sectionthreethreesubtitle">{{ sectionThreeThree.subtitle }}</p>
                             <img src="{{ asset(sectionThreeThree.imagePath) }}" alt="{{ asset(sectionThreeThree.imageAlt) }}" >
-                            <p class='left box-cont2 textToModify'>{{ sectionThreeThree.content }}</p>
+                            <p class='left box-cont2 textToModify sectionthreethree' data-id="{{ sectionThreeThree.id }}" data-part="sectionthreethreecontent">{{ sectionThreeThree.content }}</p>
                         </div><!--/grid-->
                     </div><!--/grid-->
                 </div>
@@ -157,8 +159,8 @@
                             <div class="grid_1 mrg0">
                                 <img src="{{ asset('images/icons/logo.png') }}" alt="ico">
                             </div><!--/grid-->
-                            <h3 class='left h-icon textToModify'>{{ sectionFour.title }}</h3>
-                            <p class='sl-cont2 left textToModify'>{{ sectionFour.subtitle }}</p>
+                            <h3 class='left h-icon textToModify sectionfour' data-id="{{ sectionFour.id }}" data-part="sectionfourtitle">{{ sectionFour.title }}</h3>
+                            <p class='sl-cont2 left textToModify' data-id="{{ sectionFour.id }}" data-part="sectionfoursubtitle">{{ sectionFour.subtitle }}</p>
                             <div class="cont-block1">
                                 <div class="grid_2 mrg0 hidd">
                                     <div class="pic-hov"></div>
@@ -200,8 +202,8 @@
                         <div class="grid_1" >
                             <img src="{{ asset('images/page-1_ico-6.png') }}" alt="ico">
                         </div><!--/grid-->
-                        <h3 class="left h-icon textToModify">{{ sectionFive.title }}</h3>
-                        <p class="sl-cont2 left textToModify">{{ sectionFive.subtitle }}</p>
+                        <h3 class="left h-icon textToModify sectionfive" data-id="{{ sectionFive.id }}" data-part="sectionfivetitle">{{ sectionFive.title }}</h3>
+                        <p class="sl-cont2 left textToModify sectionfive" data-id="{{ sectionFive.id }}" data-part="sectionfivesubtitle">{{ sectionFive.subtitle }}</p>
                     </div><!--/grid-->
                     <div class="owl-wrap">
                         <div id="owl2" class="owl-carousel2">
