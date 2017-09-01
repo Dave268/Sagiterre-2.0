@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * WelcomeMessage
  *
- * @ORM\Table(name="sg_welcome_message")
+ * @ORM\Table(name="sg_layout_welcome_message")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\WelcomeMessageRepository")
  */
 class WelcomeMessage

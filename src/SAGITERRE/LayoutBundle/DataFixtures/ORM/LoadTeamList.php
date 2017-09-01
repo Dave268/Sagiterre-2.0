@@ -25,12 +25,12 @@ class LoadTeamList implements FixtureInterface
             'Antoinette Goubau',
             'Venenatis bibendum, magna lectu fermentum lacus, vel accumsan.',
             'antoinette.jpg',
-            'bundles/Layout/team/images/antoinette.jpg'),
+            'bundles/Layout/images/antoinette.jpg'),
             array(
                 'Marguerite de Limbourg',
                 'Diam tellus eu velit. Donec lobortis lacinia nisl quis scelerisque.',
                 'marguerite.jpg',
-                'bundles/Layout/team/images/marguerite.jpg'),
+                'bundles/Layout/images/marguerite.jpg'),
         );
 
         foreach ($slides as $slide) {

@@ -5,12 +5,12 @@ namespace SAGITERRE\LayoutBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * SectionThreeOne
+ * NewsArchive
  *
- * @ORM\Table(name="sg_layout_section_three_one")
- * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\SectionThreeOneRepository")
+ * @ORM\Table(name="news_archive")
+ * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\NewsArchiveRepository")
  */
-class SectionThreeOne
+class NewsArchive
 {
     /**
      * @var int
@@ -34,27 +34,6 @@ class SectionThreeOne
      * @ORM\Column(name="subtitle", type="string", length=255)
      */
     private $subtitle;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="content", type="text")
-     */
-    private $content;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="alt", type="string", length=255)
-     */
-    private $imageAlt;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="path", type="string", length=255)
-     */
-    private $imagePath;
 
     /**
      * @var \DateTime
@@ -98,7 +77,7 @@ class SectionThreeOne
      *
      * @param string $title
      *
-     * @return SectionThreeOne
+     * @return NewsArchive
      */
     public function setTitle($title)
     {
@@ -122,7 +101,7 @@ class SectionThreeOne
      *
      * @param string $subtitle
      *
-     * @return SectionThreeOne
+     * @return NewsArchive
      */
     public function setSubtitle($subtitle)
     {
@@ -142,35 +121,11 @@ class SectionThreeOne
     }
 
     /**
-     * Set content
-     *
-     * @param string $content
-     *
-     * @return SectionThreeOne
-     */
-    public function setContent($content)
-    {
-        $this->content = $content;
-
-        return $this;
-    }
-
-    /**
-     * Get content
-     *
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    /**
      * Set dateAdd
      *
      * @param \DateTime $dateAdd
      *
-     * @return SectionThreeOne
+     * @return NewsArchive
      */
     public function setDateAdd($dateAdd)
     {
@@ -194,7 +149,7 @@ class SectionThreeOne
      *
      * @param \DateTime $dateUpdate
      *
-     * @return SectionThreeOne
+     * @return NewsArchive
      */
     public function setDateUpdate($dateUpdate)
     {
@@ -218,7 +173,7 @@ class SectionThreeOne
      *
      * @param boolean $active
      *
-     * @return SectionThreeOne
+     * @return NewsArchive
      */
     public function setActive($active)
     {
@@ -230,58 +185,11 @@ class SectionThreeOne
     /**
      * Get active
      *
-     * @return boolean
+     * @return bool
      */
     public function getActive()
     {
         return $this->active;
     }
-
-    /**
-     * Set imageAlt
-     *
-     * @param string $imageAlt
-     *
-     * @return SectionThreeOne
-     */
-    public function setImageAlt($imageAlt)
-    {
-        $this->imageAlt = $imageAlt;
-
-        return $this;
-    }
-
-    /**
-     * Get imageAlt
-     *
-     * @return string
-     */
-    public function getImageAlt()
-    {
-        return $this->imageAlt;
-    }
-
-    /**
-     * Set imagePath
-     *
-     * @param string $imagePath
-     *
-     * @return SectionThreeOne
-     */
-    public function setImagePath($imagePath)
-    {
-        $this->imagePath = $imagePath;
-
-        return $this;
-    }
-
-    /**
-     * Get imagePath
-     *
-     * @return string
-     */
-    public function getImagePath()
-    {
-        return $this->imagePath;
-    }
 }
+

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * TeamList
  *
- * @ORM\Table(name="team_list")
+ * @ORM\Table(name="sg_layout_team_list")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\TeamListRepository")
  */
 class TeamList

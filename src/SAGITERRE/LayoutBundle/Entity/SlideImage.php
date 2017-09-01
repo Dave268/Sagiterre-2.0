@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * SlideImage
  *
- * @ORM\Table(name="sg_slide_image")
+ * @ORM\Table(name="sg_layout_slide_image")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\SlideImageRepository")
  */
 class SlideImage

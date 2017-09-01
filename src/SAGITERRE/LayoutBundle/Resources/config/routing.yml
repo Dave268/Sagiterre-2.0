@@ -75,3 +75,15 @@ sagiterre_layout_contact_form:
     defaults: { _controller: SAGITERRELayoutBundle:Layout:modifyContact, id: 0 }
     options:
             expose: true
+
+sagiterre_layout_news_form:
+    path:     /newsForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifyNews, id: 0 }
+    options:
+            expose: true
+
+sagiterre_layout_newsarchives_form:
+    path:     /newsArchivesForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifyNewsArchives, id: 0 }
+    options:
+            expose: true

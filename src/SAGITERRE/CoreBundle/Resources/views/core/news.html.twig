@@ -77,8 +77,8 @@
                         <div class="grid_1 mrg0">
                             <img src="{{ asset('images/page-4_ico-2.png') }}" alt="ico">
                         </div><!--/grid-->
-                        <h3 class='left h-icon'>News</h3>
-                        <p class='sl-cont2 left'>Aliquam ullamcorper arcu</p>
+                        <h3 class='left h-icon textToModify news' data-id="{{ news.id }}" data-part="newstitle">{{ news.title }}</h3>
+                        <p class='sl-cont2 left textToModify news' data-id="{{ news.id }}" data-part="newssubtitle">{{ news.subtitle }}</p>
                         <div class="cont-block1">
                             <div class="grid_2 mrg0 hidd">
                                 <div class="pic-hov"></div>
@@ -179,8 +179,8 @@
                     <div class="grid_1">
                         <img src="{{ asset('images/page-4_ico-3.png') }}" alt="ico">
                     </div><!--/grid-->
-                    <h3 class='left h-icon'>news archives</h3>
-                    <p class='p2-sl-cont2 left padd-right'>Praesent fermentum sit amet</p>
+                    <h3 class='left h-icon textToModify newsarchives' data-id="{{ newsArchives.id }}" data-part="newsarchivestitle">{{ newsArchives.title }}</h3>
+                    <p class='sl-cont2 left textToModify newsarchives' data-id="{{ newsArchives.id }}" data-part="newsarchivessubtitle">{{ newsArchives.subtitle }}</p>
                     <div class="grid_4 p2-c-block-h4">
                         <a class='left arr-cont' href="#">January 2014 </a>
                         <a class='left arr-cont' href="#">February 2014 </a>

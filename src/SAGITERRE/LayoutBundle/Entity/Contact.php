@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Contact
  *
- * @ORM\Table(name="contact")
+ * @ORM\Table(name="sg_layout_contact")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\ContactRepository")
  */
 class Contact

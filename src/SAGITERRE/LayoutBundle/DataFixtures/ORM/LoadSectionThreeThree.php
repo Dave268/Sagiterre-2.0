@@ -25,7 +25,7 @@ class LoadSectionThreeThree implements FixtureInterface
             'Une approche de la nature et de soi',
             'C\'est riche de tout ce cheminement et dans la simplicité de ce que je suis devenue aujourd\'hui que j\'aime partager des moments sous forme d\'ateliers, de stages, de rencontres individuelles, ... J\'aime observer et vivre dans ce lieu avec ses chevaux et ses habitants, avec toutes les personnes qui y passent plus ou moins longtemps, j\'aime conduire ce navire si vivant, si subtile et en même temps si simple. Tout y est, il n\'y a plus qu\'à y goûter, à recevoir, à vivre.',
             'page-1_img04',
-            'bundles/Layout/sectionthree/images/page-1_img04.jpg'
+            'bundles/Layout/images/page-1_img04.jpg'
         )
         );
 

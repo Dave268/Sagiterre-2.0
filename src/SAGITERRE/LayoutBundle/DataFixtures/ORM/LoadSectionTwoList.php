@@ -22,19 +22,19 @@ class LoadSectionTwoList implements FixtureInterface
         // Liste des noms de catégorie à ajouter
         $slides = array(array(
                 'Canelle',
-                'bundles/Layout/sectiontwolist/images/canelle.png'),
+                'bundles/Layout/images/canelle.png'),
             array(
                 'Chesta',
-                'bundles/Layout/sectiontwolist/images/chesta.png'),
+                'bundles/Layout/images/chesta.png'),
             array(
                 'Gramoun',
-                'bundles/Layout/sectiontwolist/images/gramoun.png'),
+                'bundles/Layout/images/gramoun.png'),
             array(
                 'Guérane',
-                'bundles/Layout/sectiontwolist/images/guerane.png'),
+                'bundles/Layout/images/guerane.png'),
             array(
                 'Vénus',
-                'bundles/Layout/sectiontwolist/images/venus.png'),
+                'bundles/Layout/images/venus.png'),
         );
 
         foreach ($slides as $slide) {

@@ -5,12 +5,12 @@ namespace SAGITERRE\LayoutBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * SectionThreeOne
+ * News
  *
- * @ORM\Table(name="sg_layout_section_three_one")
- * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\SectionThreeOneRepository")
+ * @ORM\Table(name="sg_layout_news")
+ * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\NewsRepository")
  */
-class SectionThreeOne
+class News
 {
     /**
      * @var int
@@ -34,27 +34,6 @@ class SectionThreeOne
      * @ORM\Column(name="subtitle", type="string", length=255)
      */
     private $subtitle;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="content", type="text")
-     */
-    private $content;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="alt", type="string", length=255)
-     */
-    private $imageAlt;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="path", type="string", length=255)
-     */
-    private $imagePath;
 
     /**
      * @var \DateTime
@@ -94,27 +73,27 @@ class SectionThreeOne
     }
 
     /**
-     * Set title
+     * Set titlz
      *
-     * @param string $title
+     * @param string $titlz
      *
-     * @return SectionThreeOne
+     * @return News
      */
-    public function setTitle($title)
+    public function setTitlz($titlz)
     {
-        $this->title = $title;
+        $this->titlz = $titlz;
 
         return $this;
     }
 
     /**
-     * Get title
+     * Get titlz
      *
      * @return string
      */
-    public function getTitle()
+    public function getTitlz()
     {
-        return $this->title;
+        return $this->titlz;
     }
 
     /**
@@ -122,7 +101,7 @@ class SectionThreeOne
      *
      * @param string $subtitle
      *
-     * @return SectionThreeOne
+     * @return News
      */
     public function setSubtitle($subtitle)
     {
@@ -142,35 +121,11 @@ class SectionThreeOne
     }
 
     /**
-     * Set content
-     *
-     * @param string $content
-     *
-     * @return SectionThreeOne
-     */
-    public function setContent($content)
-    {
-        $this->content = $content;
-
-        return $this;
-    }
-
-    /**
-     * Get content
-     *
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    /**
      * Set dateAdd
      *
      * @param \DateTime $dateAdd
      *
-     * @return SectionThreeOne
+     * @return News
      */
     public function setDateAdd($dateAdd)
     {
@@ -194,7 +149,7 @@ class SectionThreeOne
      *
      * @param \DateTime $dateUpdate
      *
-     * @return SectionThreeOne
+     * @return News
      */
     public function setDateUpdate($dateUpdate)
     {
@@ -214,11 +169,35 @@ class SectionThreeOne
     }
 
     /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return News
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
      * Set active
      *
      * @param boolean $active
      *
-     * @return SectionThreeOne
+     * @return News
      */
     public function setActive($active)
     {
@@ -235,53 +214,5 @@ class SectionThreeOne
     public function getActive()
     {
         return $this->active;
-    }
-
-    /**
-     * Set imageAlt
-     *
-     * @param string $imageAlt
-     *
-     * @return SectionThreeOne
-     */
-    public function setImageAlt($imageAlt)
-    {
-        $this->imageAlt = $imageAlt;
-
-        return $this;
-    }
-
-    /**
-     * Get imageAlt
-     *
-     * @return string
-     */
-    public function getImageAlt()
-    {
-        return $this->imageAlt;
-    }
-
-    /**
-     * Set imagePath
-     *
-     * @param string $imagePath
-     *
-     * @return SectionThreeOne
-     */
-    public function setImagePath($imagePath)
-    {
-        $this->imagePath = $imagePath;
-
-        return $this;
-    }
-
-    /**
-     * Get imagePath
-     *
-     * @return string
-     */
-    public function getImagePath()
-    {
-        return $this->imagePath;
     }
 }

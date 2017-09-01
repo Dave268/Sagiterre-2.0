@@ -20,7 +20,7 @@ class LoadAbout implements FixtureInterface
             'Curabitur ornare volutpat sollicitudin. Nunc elementum quis dui sit amet pharetra. Vivamus hendrerit, tempor nulla non, volutpat felis. Fusce cursus fermentum pretium.',
             'Curabitur ornare volutpat sollicitudin. Nunc elementum quis dui sit amet pharetra. Vivamus id luctus ex, id tristique purus. Curabitur suscipit malesuada mollis. Morbi viverra maximus sodales. Nulla luctus, ipsum eu consectetur maximus, enim mi rhoncus nisi, non dictum neque nulla id neque. Nam bibendum molestie eleifend. Maecenas porttitor Praesent fermentum sapien sit amet sollicitudin facilisis. Nullam sed felis pulvinar, eleifend diam ac, viverra turpis. etiam cursus justo sit amet tortor cursus feugiat. ',
             'Untitled 8.jpg',
-            'bundles/Layout/about/images/Untitled 8.jpg'
+            'bundles/Layout/images/Untitled 8.jpg'
         )
         );
 

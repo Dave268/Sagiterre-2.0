@@ -77,7 +77,12 @@ class CoreController extends Controller
 
     public function newsAction()
     {
+        $news = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:News')->findOneBy(array('active' => '1'));
+        $newsArchives = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:NewsArchive')->findOneBy(array('active' => '1'));
+
         return $this->render('SAGITERRECoreBundle:core:news.html.twig', array(
+            'news'              => $news,
+            'newsArchives'      => $newsArchives
         ));
     }
 

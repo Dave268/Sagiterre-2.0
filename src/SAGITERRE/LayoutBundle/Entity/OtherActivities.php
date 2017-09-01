@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * OtherActivities
  *
- * @ORM\Table(name="other_activities")
+ * @ORM\Table(name="sg_layout_other_activities")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\OtherActivitiesRepository")
  */
 class OtherActivities

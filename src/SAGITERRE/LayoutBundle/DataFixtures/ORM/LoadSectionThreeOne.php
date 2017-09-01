@@ -25,7 +25,7 @@ class LoadSectionThreeOne implements FixtureInterface
             'Les chevaux, un merveilleux mirroir',
             'Sagi-Terre souhaite contribuer à un monde où l\'humain cultive un lien sensible et bienveillant au vivant qui l\'entoure et à lui-même. Nous pensons que cela passe, entre autre, par une meilleure connaissance de soi, de notre nature profonde d\'humain. Nous proposons des moments d\'exploration au travers: de l\'hippothérapie (avec les chevaux), de stages et ateliers pour enfants et adultes, de la méthode de Libération des Cuirasses, d\'un accompagnement individualisé.',
             'Untitled 8.jpg',
-            'bundles/Layout/sectionthree/images/Untitled 8.jpg'
+            'bundles/Layout/images/Untitled 8.jpg'
         )
         );
 

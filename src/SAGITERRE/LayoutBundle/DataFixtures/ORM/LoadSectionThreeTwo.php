@@ -25,7 +25,7 @@ class LoadSectionThreeTwo implements FixtureInterface
             'Une équipe de passionés',
             'Après 7 années de travail en hippothérapie à la Ferme Équestre de Louvain la Neuve, un nouveau tournant s\'est présenté. J\'avais soif d\'indépendance, de découvertes toujours plus loin dans ces domaines de l\'humain, de l\'énergétique, de la nature, de l\'animal, ... et j\'ai décidé de suivre cet appel. J\'ai travaillé deux ans en tant qu\'indépendante, toujours dans l\'accompagnement des personnes par la relation au cheval dans un magnifique endroit qui me permettait de travailler avec des chevaux en prairie, dans des grands espaces.',
             'IMG_1533.JPG',
-            'bundles/Layout/sectionthree/images/IMG_1533.JPG'
+            'bundles/Layout/images/IMG_1533.JPG'
         )
         );
 

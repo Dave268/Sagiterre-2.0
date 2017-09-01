@@ -6,6 +6,8 @@ use SAGITERRE\LayoutBundle\Entity\About;
 use SAGITERRE\LayoutBundle\Entity\Activities;
 use SAGITERRE\LayoutBundle\Entity\Contact;
 use SAGITERRE\LayoutBundle\Entity\Mission;
+use SAGITERRE\LayoutBundle\Entity\News;
+use SAGITERRE\LayoutBundle\Entity\NewsArchive;
 use SAGITERRE\LayoutBundle\Entity\OtherActivities;
 use SAGITERRE\LayoutBundle\Entity\SectionFive;
 use SAGITERRE\LayoutBundle\Entity\SectionThreeOne;
@@ -1064,5 +1066,152 @@ class LayoutController extends Controller
             }
         }
     }
+
+    public function  modifyNewsAction($id, $part, Request $request)
+    {
+        if ($this->get('security.authorization_checker')->isGranted('ROLE_USER'))
+        {
+            if($id < 1)
+            {
+                throw new NotFoundHttpException('Ce titre n\'existe pas.');
+            }
+            else
+            {
+                $news = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:News')->find($id);
+                $newMessage = new News();
+
+
+                $formData = array();
+                $form = $this->get('form.factory')->createBuilder(FormType::class, $formData)
+                    ->add('message',         TextareaType::class)
+                    ->getForm();
+
+                if ($request->isMethod('POST')) {
+
+                    $form->handleRequest($request);
+                    $formData = $form->getData();
+                    $em = $this->getDoctrine()->getManager();
+
+                    if(($part == 'newstitle'  && $formData['message'] != $news->getTitle()) OR ($part == 'newssubtitle'  && $formData['message'] != $news->getSubtitle())) {
+                        $newMessage->setTitle($news->getTitle());
+                        $newMessage->setSubtitle($news->getSubtitle());
+
+                        if ($part == 'newstitle') {
+                            $newMessage->setTitle($formData['message']);
+                        } elseif ($part == 'newssubtitle') {
+                            $newMessage->setSubtitle($formData['message']);
+                        }
+
+                        $news->setActive(false);
+                        $em->persist($news);
+                        $em->persist($newMessage);
+                        $em->flush();
+
+                        if ($request->isXmlHttpRequest()) {
+                            $json = json_encode(array(
+                                'id' => $newMessage->getId(),
+                                'title' => $newMessage->getTitle()
+                            ));
+
+                            $response = new Response($json);
+                            $response->headers->set('Content-Type', 'application/json');
+
+                            return $response;
+                        }
+                    }
+                    else
+                    {
+                        if ($request->isXmlHttpRequest()) {
+                            $json = json_encode(array(
+                                'id' => $news->getId(),
+                            ));
+
+                            $response = new Response($json);
+                            $response->headers->set('Content-Type', 'application/json');
+
+                            return $response;
+                        }
+                    }
+                    return $this->redirect($this->generateUrl('sagiterre_core_homepage'));
+                }
+                return $this->get('templating')->renderResponse('SAGITERRELayoutBundle:forms:welcomeMessageTitleForm.html.twig', array(
+                    'form'          => $form->createView()));
+            }
+        }
+    }
+
+    public function  modifyNewsArchivesAction($id, $part, Request $request)
+    {
+        if ($this->get('security.authorization_checker')->isGranted('ROLE_USER'))
+        {
+            if($id < 1)
+            {
+                throw new NotFoundHttpException('Ce titre n\'existe pas.');
+            }
+            else
+            {
+                $news = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:NewsArchives')->find($id);
+                $newMessage = new NewsArchive();
+
+
+                $formData = array();
+                $form = $this->get('form.factory')->createBuilder(FormType::class, $formData)
+                    ->add('message',         TextareaType::class)
+                    ->getForm();
+
+                if ($request->isMethod('POST')) {
+
+                    $form->handleRequest($request);
+                    $formData = $form->getData();
+                    $em = $this->getDoctrine()->getManager();
+
+                    if(($part == 'newsarchivestitle'  && $formData['message'] != $news->getTitle()) OR ($part == 'newsarchivessubtitle'  && $formData['message'] != $news->getSubtitle())) {
+                        $newMessage->setTitle($news->getTitle());
+                        $newMessage->setSubtitle($news->getSubtitle());
+
+                        if ($part == 'newsarchivestitle') {
+                            $newMessage->setTitle($formData['message']);
+                        } elseif ($part == 'newsarchivessubtitle') {
+                            $newMessage->setSubtitle($formData['message']);
+                        }
+
+                        $news->setActive(false);
+                        $em->persist($news);
+                        $em->persist($newMessage);
+                        $em->flush();
+
+                        if ($request->isXmlHttpRequest()) {
+                            $json = json_encode(array(
+                                'id' => $newMessage->getId(),
+                                'title' => $newMessage->getTitle()
+                            ));
+
+                            $response = new Response($json);
+                            $response->headers->set('Content-Type', 'application/json');
+
+                            return $response;
+                        }
+                    }
+                    else
+                    {
+                        if ($request->isXmlHttpRequest()) {
+                            $json = json_encode(array(
+                                'id' => $news->getId(),
+                            ));
+
+                            $response = new Response($json);
+                            $response->headers->set('Content-Type', 'application/json');
+
+                            return $response;
+                        }
+                    }
+                    return $this->redirect($this->generateUrl('sagiterre_core_homepage'));
+                }
+                return $this->get('templating')->renderResponse('SAGITERRELayoutBundle:forms:welcomeMessageTitleForm.html.twig', array(
+                    'form'          => $form->createView()));
+            }
+        }
+    }
+
 
 }

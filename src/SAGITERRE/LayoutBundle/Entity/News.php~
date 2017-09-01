@@ -5,12 +5,12 @@ namespace SAGITERRE\LayoutBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Activities
+ * News
  *
- * @ORM\Table(name="sg_layout_activities")
- * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\ActivitiesRepository")
+ * @ORM\Table(name="news")
+ * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\NewsRepository")
  */
-class Activities
+class News
 {
     /**
      * @var int
@@ -73,27 +73,27 @@ class Activities
     }
 
     /**
-     * Set title
+     * Set titlz
      *
-     * @param string $title
+     * @param string $titlz
      *
-     * @return Activities
+     * @return News
      */
-    public function setTitle($title)
+    public function setTitlz($titlz)
     {
-        $this->title = $title;
+        $this->titlz = $titlz;
 
         return $this;
     }
 
     /**
-     * Get title
+     * Get titlz
      *
      * @return string
      */
-    public function getTitle()
+    public function getTitlz()
     {
-        return $this->title;
+        return $this->titlz;
     }
 
     /**
@@ -101,7 +101,7 @@ class Activities
      *
      * @param string $subtitle
      *
-     * @return Activities
+     * @return News
      */
     public function setSubtitle($subtitle)
     {
@@ -125,7 +125,7 @@ class Activities
      *
      * @param \DateTime $dateAdd
      *
-     * @return Activities
+     * @return News
      */
     public function setDateAdd($dateAdd)
     {
@@ -149,7 +149,7 @@ class Activities
      *
      * @param \DateTime $dateUpdate
      *
-     * @return Activities
+     * @return News
      */
     public function setDateUpdate($dateUpdate)
     {
@@ -167,28 +167,5 @@ class Activities
     {
         return $this->dateUpdate;
     }
-
-    /**
-     * Set active
-     *
-     * @param boolean $active
-     *
-     * @return Activities
-     */
-    public function setActive($active)
-    {
-        $this->active = $active;
-
-        return $this;
-    }
-
-    /**
-     * Get active
-     *
-     * @return boolean
-     */
-    public function getActive()
-    {
-        return $this->active;
-    }
 }
+
