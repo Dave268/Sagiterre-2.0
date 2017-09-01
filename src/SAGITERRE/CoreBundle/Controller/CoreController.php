@@ -49,13 +49,29 @@ class CoreController extends Controller
 
     public function aboutAction()
     {
+        $about  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:About')->findOneBy(array('active' => '1'));
+        $team = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:Team')->findOneBy(array('active' => '1'));
+        $teamList = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:TeamList')->findBy(array('active' => '1'));
+        $mission  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:Mission')->findOneBy(array('active' => '1'));
+
+
         return $this->render('SAGITERRECoreBundle:core:about.html.twig', array(
+            'about'     => $about,
+            'team'      => $team,
+            'teamList'  => $teamList,
+            'mission'   => $mission,
         ));
     }
 
     public function activitiesAction()
     {
+        $activities = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:Activities')->findOneBy(array('active' => '1'));
+        $otherActivities  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:OtherActivities')->findOneBy(array('active' => '1'));
+
+
         return $this->render('SAGITERRECoreBundle:core:activities.html.twig', array(
+            'activities'        => $activities,
+            'otheractivities'   => $otherActivities,
         ));
     }
 
@@ -67,7 +83,10 @@ class CoreController extends Controller
 
     public function contactAction()
     {
+        $contact = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:Contact')->findOneBy(array('active' => '1'));
+
         return $this->render('SAGITERRECoreBundle:core:contact.html.twig', array(
+            'contact'       => $contact,
         ));
     }
 }

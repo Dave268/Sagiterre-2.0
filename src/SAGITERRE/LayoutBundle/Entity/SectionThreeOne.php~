@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * SectionThreeOne
  *
- * @ORM\Table(name="section_three_one")
+ * @ORM\Table(name="sg_section_three_one")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\SectionThreeOneRepository")
  */
 class SectionThreeOne
@@ -163,30 +163,6 @@ class SectionThreeOne
     public function getContent()
     {
         return $this->content;
-    }
-
-    /**
-     * Set version
-     *
-     * @param string $version
-     *
-     * @return SectionThreeOne
-     */
-    public function setVersion($version)
-    {
-        $this->version = $version;
-
-        return $this;
-    }
-
-    /**
-     * Get version
-     *
-     * @return string
-     */
-    public function getVersion()
-    {
-        return $this->version;
     }
 
     /**

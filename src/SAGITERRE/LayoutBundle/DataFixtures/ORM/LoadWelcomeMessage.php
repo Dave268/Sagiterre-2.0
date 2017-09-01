@@ -20,7 +20,7 @@ class LoadWelcomeMessage implements FixtureInterface
     {
         // Liste des noms de catégorie à ajouter
         $messages = array(array(
-            'BIENVENU CHEZ SAGI-TERRE',
+            'BIENVENUE CHEZ SAGI-TERRE',
             'Une approche sensible du Cheval, de la Nature, du Corps en mouvement ... pour un développement de la personne.',
             'Sagi-Terre souhaite contribuer à un monde où l\'humain cultive un lien sensible et bienveillant au vivant qui l\'entoure et à lui-même. Nous pensons que cela passe, entre autre, par une meilleure connaissance de soi, de notre nature profonde d\'humain. Nous proposons des moments d\'exploration au travers:',
             'de l\'hippothérapie (avec les chevaux), de stages et ateliers pour enfants et adultes, de la méthode de Libération des Cuirasses, d\'un accompagnement individualisé.',

@@ -35,8 +35,8 @@
                     <div class="grid_1 mrg0">
                         <img src="{{ asset('images/icons/logo.png') }}" alt="ico">
                     </div><!--/grid-->
-                    <h3 class='left h-icon'>Nos activités</h3>
-                    <p class='p2-sl-cont left'>Etiam volutpat sollicit</p>
+                    <h3 class='left h-icon textToModify activities' data-id="{{ activities.id }}" data-part="activitiestitle">{{ activities.title }}</h3>
+                    <p class='p2-sl-cont left textToModify activities' data-id="{{ activities.id }}" data-part="activitiessubtitle">{{ activities.subtitle }}</p>
                     <div class="cont-block-p3">
                         <div class="grid_4 mrg0 hidd">
                             <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img01.jpg') }}" alt="pic"></a>
@@ -129,28 +129,24 @@
                     <div class="grid_1 mrg0">
                         <img src="{{ asset('images/icons/logo.png') }}" alt="ico">
                     </div><!--/grid-->
-                    <h3 class='left h-icon'>Autres activités</h3>
-                    <p class='p2-sl-cont2 left padd-right'>Nulla pellentesque, quam sed</p>
+                    <h3 class='left h-icon textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiestitle">{{ otheractivities.title }}</h3>
+                    <p class='p2-sl-cont2 left padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiessubtitle">{{ otheractivities.subtitle }}</p>
                     <div class="grid_4 mrg0">
-                        <p class='left p2-c-block-h3 padd-right'>Proin convallis dolor diam. Fusce effic
-                            itur egestas diam, aliquet. </p>
-                        <p class='left c-block-dis2 padd-right'>Ut porttitor vestibulum suscipit. Maecenas sit amet ex diam. Integer condimentum est vel ornare hendrerit. Suspendisse nec justo hendre. </p>
-                        <a class="p2-c-block-a" href="#">More</a>
+                        <p class='left p2-c-block-h3 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumnoneintro">{{ otheractivities.columnOneIntro }}</p>
+                        <p class='left c-block-dis2 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumnonecontent">{{ otheractivities.columnOneContent}} </p></br>
+                        <!--<a class="p2-c-block-a" href="#">More</a>-->
                     </div><!--/grid-->
 
                     <div class="grid_4">
-                        <p class='left p2-c-block-h3 padd-right'>Curabitur erat diam, dapibus eget efficitur
-                            praesent pharetra nisl vel accu.</p>
-                        <p class='left c-block-dis2 padd-right'>Suspendisse nec justo hendrerit, tempor nulla non, volutpat felis. Fusce cursus fermentum pretium. Pellentesque habitant morbi tristique. </p>
-                        <a class="p2-c-block-a" href="#">More</a>
+                        <p class='left p2-c-block-h3 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumntwointro">{{ otheractivities.columnTwoIntro }}</p>
+                        <p class='left c-block-dis2 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumntwocontent">{{ otheractivities.columnTwoContent}} </p></br>
+                        <!--<a class="p2-c-block-a" href="#">More</a>-->
                     </div><!--/grid-->
 
                     <div class="grid_4">
-                        <p class='left p2-c-block-h3 padd-right'>Erat diam, dapibus eget efficitur vel, pretium
-                            nisl vel accumsan volutpat. </p>
-                        <p class='left c-block-dis2 padd-right'>Cras elit enim, scelerisque in tincidunt ut, sodales vel mauris. Integer placerat lorem at est venenatis varius
-                            id vel lectus. Fusce porttitor. </p>
-                        <a class="p2-c-block-a" href="#">More</a>
+                        <p class='left p2-c-block-h3 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumnthreeintro">{{ otheractivities.columnThreeIntro }}</p>
+                        <p class='left c-block-dis2 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumnthreeintro">{{ otheractivities.columnThreeContent }} </p></br>
+                        <!--<a class="p2-c-block-a" href="#">More</a>-->
                     </div><!--/grid-->
                 </div><!--/grid-->
             </div>

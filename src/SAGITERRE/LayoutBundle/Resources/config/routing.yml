@@ -39,3 +39,39 @@ sagiterre_layout_SFI_form:
     defaults: { _controller: SAGITERRELayoutBundle:Layout:modifySectionFive, id: 0 }
     options:
             expose: true
+
+sagiterre_layout_about_form:
+    path:     /aboutForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifyAbout, id: 0 }
+    options:
+            expose: true
+
+sagiterre_layout_team_form:
+    path:     /teamForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifyTeam, id: 0 }
+    options:
+            expose: true
+
+sagiterre_layout_mission_form:
+    path:     /missionForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifyMission, id: 0 }
+    options:
+            expose: true
+
+sagiterre_layout_activities_form:
+    path:     /activitiesForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifyActivities, id: 0 }
+    options:
+            expose: true
+
+sagiterre_layout_otheractivities_form:
+    path:     /otheractivitiesForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifyOtherActivities, id: 0 }
+    options:
+            expose: true
+
+sagiterre_layout_contact_form:
+    path:     /contactForm/{id}/{part}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:modifyContact, id: 0 }
+    options:
+            expose: true

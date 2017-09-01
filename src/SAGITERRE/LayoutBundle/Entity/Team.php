@@ -5,12 +5,12 @@ namespace SAGITERRE\LayoutBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * SectionFive
+ * Team
  *
- * @ORM\Table(name="sg_section_five")
- * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\SectionFiveRepository")
+ * @ORM\Table(name="team")
+ * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\TeamRepository")
  */
-class SectionFive
+class Team
 {
     /**
      * @var int
@@ -77,7 +77,7 @@ class SectionFive
      *
      * @param string $title
      *
-     * @return SectionFive
+     * @return Team
      */
     public function setTitle($title)
     {
@@ -101,7 +101,7 @@ class SectionFive
      *
      * @param string $subtitle
      *
-     * @return SectionFive
+     * @return Team
      */
     public function setSubtitle($subtitle)
     {
@@ -125,7 +125,7 @@ class SectionFive
      *
      * @param \DateTime $dateAdd
      *
-     * @return SectionFive
+     * @return Team
      */
     public function setDateAdd($dateAdd)
     {
@@ -149,7 +149,7 @@ class SectionFive
      *
      * @param \DateTime $dateUpdate
      *
-     * @return SectionFive
+     * @return Team
      */
     public function setDateUpdate($dateUpdate)
     {
@@ -169,35 +169,11 @@ class SectionFive
     }
 
     /**
-     * Set version
-     *
-     * @param string $version
-     *
-     * @return SectionFive
-     */
-    public function setVersion($version)
-    {
-        $this->version = $version;
-
-        return $this;
-    }
-
-    /**
-     * Get version
-     *
-     * @return string
-     */
-    public function getVersion()
-    {
-        return $this->version;
-    }
-
-    /**
      * Set active
      *
      * @param boolean $active
      *
-     * @return SectionFive
+     * @return Team
      */
     public function setActive($active)
     {

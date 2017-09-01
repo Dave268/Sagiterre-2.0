@@ -34,15 +34,14 @@
                     <div class="grid_1 mrg0">
                         <img src="{{ asset('images/page-5_ico-1.png') }}" alt="ico">
                     </div><!--/grid-->
-                    <h3 class='left h-icon'>Notre addresse</h3>
-                    <p class='sl-cont3 left'>Adresse du troupeau</p>
+                    <h3 class='left h-icon textToModify contact' data-id="{{ contact.id }}" data-part="contacttitle">{{ contact.title }}</h3>
+                    <p class='sl-cont3 left textToModify contact' data-id="{{ contact.id }}" data-part="contactsubtitle">{{ contact.subtitle }}</p>
                     <div class="grid_4 mrg0">
 
 
-                        <p class='left p2-c-block-h3'>rue de la Tour 6,<br>
-                            Nil Pierreux (Walhain)</p>
-                        <p class='left cont-5'>Telephone:                     +32(0)472/259943</p>
-                        <p class="mail">E-mail: <a href="mailto:mail@demolink.org">antoinette@sagiterre.be</a></p>
+                        <p class='left p2-c-block-h3 textToModify contact' data-id="{{ contact.id }}" data-part="contactadress">{{ contact.adress }}</p>
+                        <p class='left cont-5 textToModify contact' data-id="{{ contact.id }}" data-part="contactphone">{{ contact.phone }}</p>
+                        <p class="mail textToModify contact" data-id="{{ contact.id }}" data-part="contactmail">{{ contact.mail }}</a></p>
                     </div><!--/grid-->
                 </div><!--/grid-->
             </div>

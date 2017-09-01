@@ -5,12 +5,12 @@ namespace SAGITERRE\LayoutBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * SectionFive
+ * About
  *
- * @ORM\Table(name="sg_section_five")
- * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\SectionFiveRepository")
+ * @ORM\Table(name="about")
+ * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\AboutRepository")
  */
-class SectionFive
+class About
 {
     /**
      * @var int
@@ -36,6 +36,20 @@ class SectionFive
     private $subtitle;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="intro", type="text")
+     */
+    private $intro;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text")
+     */
+    private $content;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateAdd", type="datetime")
@@ -48,6 +62,20 @@ class SectionFive
      * @ORM\Column(name="dateUpdate", type="datetime", nullable=true)
      */
     private $dateUpdate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imageAlt", type="string", length=255)
+     */
+    private $imageAlt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagePath", type="string", length=255)
+     */
+    private $imagePath;
 
     /**
      * @var boolean
@@ -77,7 +105,7 @@ class SectionFive
      *
      * @param string $title
      *
-     * @return SectionFive
+     * @return About
      */
     public function setTitle($title)
     {
@@ -101,7 +129,7 @@ class SectionFive
      *
      * @param string $subtitle
      *
-     * @return SectionFive
+     * @return About
      */
     public function setSubtitle($subtitle)
     {
@@ -121,11 +149,59 @@ class SectionFive
     }
 
     /**
+     * Set intro
+     *
+     * @param string $intro
+     *
+     * @return About
+     */
+    public function setIntro($intro)
+    {
+        $this->intro = $intro;
+
+        return $this;
+    }
+
+    /**
+     * Get intro
+     *
+     * @return string
+     */
+    public function getIntro()
+    {
+        return $this->intro;
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     *
+     * @return About
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
      * Set dateAdd
      *
      * @param \DateTime $dateAdd
      *
-     * @return SectionFive
+     * @return About
      */
     public function setDateAdd($dateAdd)
     {
@@ -149,7 +225,7 @@ class SectionFive
      *
      * @param \DateTime $dateUpdate
      *
-     * @return SectionFive
+     * @return About
      */
     public function setDateUpdate($dateUpdate)
     {
@@ -169,27 +245,51 @@ class SectionFive
     }
 
     /**
-     * Set version
+     * Set imageAlt
      *
-     * @param string $version
+     * @param string $imageAlt
      *
-     * @return SectionFive
+     * @return About
      */
-    public function setVersion($version)
+    public function setImageAlt($imageAlt)
     {
-        $this->version = $version;
+        $this->imageAlt = $imageAlt;
 
         return $this;
     }
 
     /**
-     * Get version
+     * Get imageAlt
      *
      * @return string
      */
-    public function getVersion()
+    public function getImageAlt()
     {
-        return $this->version;
+        return $this->imageAlt;
+    }
+
+    /**
+     * Set imagePath
+     *
+     * @param string $imagePath
+     *
+     * @return About
+     */
+    public function setImagePath($imagePath)
+    {
+        $this->imagePath = $imagePath;
+
+        return $this;
+    }
+
+    /**
+     * Get imagePath
+     *
+     * @return string
+     */
+    public function getImagePath()
+    {
+        return $this->imagePath;
     }
 
     /**
@@ -197,7 +297,7 @@ class SectionFive
      *
      * @param boolean $active
      *
-     * @return SectionFive
+     * @return About
      */
     public function setActive($active)
     {
