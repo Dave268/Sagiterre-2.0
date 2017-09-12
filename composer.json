@@ -8,7 +8,9 @@
             "SAGITERRE\\CoreBundle\\": "src/SAGITERRE/CoreBundle",
             "SAGITERRE\\LayoutBundle\\": "src/SAGITERRE/LayoutBundle",
             "SAGITERRE\\UserBundle\\": "src/SAGITERRE/UserBundle",
-            "SAGITERRE\\AdminBundle\\": "src/SAGITERRE/AdminBundle"
+            "SAGITERRE\\AdminBundle\\": "src/SAGITERRE/AdminBundle",
+            "SAGITERRE\\ActivityBundle\\": "src/SAGITERRE/ActivityBundle",
+            "SAGITERRE\\NewsBundle\\": "src/SAGITERRE/NewsBundle"
         },
         "classmap": [
             "app/AppKernel.php",

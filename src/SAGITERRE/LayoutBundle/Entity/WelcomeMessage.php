@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="sg_layout_welcome_message")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\WelcomeMessageRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class WelcomeMessage
 {
@@ -82,6 +83,13 @@ class WelcomeMessage
         $this->dateAdd = new \DateTime();
     }
 
+    /**
+     * @ORM\PreUpdate
+     */
+    public function updateDate()
+    {
+        $this->setDateUpdate(new \DateTime());
+    }
 
     /**
      * Get id

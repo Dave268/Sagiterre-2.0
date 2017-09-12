@@ -8,7 +8,7 @@
 
 
 {% block head %}
-    <link rel="stylesheet" href="../{{ asset('css/grid.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/grid.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/contact-form.css') }}">
@@ -21,14 +21,23 @@
     <script src="{{ asset('js/TMForm.js') }}"></script>
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
-{% if is_granted('ROLE_USER') %}
-    <script src="{{ asset('bundles/admin/js/script.js') }}"></script>
-{% endif %}
+
 
 {% endblock %}
 
 
 {% block body %}
+    {% if is_granted('ROLE_USER') %}
+        <div id="modalHorse" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="closeHorse">&times;</span>
+            <p>{{ form(formHorse) }}</p>
+
+            </div>
+        </div>
+    {% endif %}
 
         <div class="camera_container">
             <div id="camera" class="camera_wrap">
@@ -95,14 +104,28 @@
                     </div><!--/grid-->
                     <div class="owl-wrap">
                         <div id="owl1">
+                            {% if is_granted('ROLE_USER') %}
+                                <div class="image-block">
+                                    <div class="owl-block" id="formHorseLaunch">
+                                        <a class="dec0" href="#" ><img class="gall1_pic gall_black" alt="gallery" src="{{ asset('bundles/Layout/images/black.jpg') }}"><span class='gall-cont gall-up'><i class="fa fa-plus-circle" style="font-size:50px;"></i></span></a>
+                                    </div>
+                                </div>
+                            {% endif %}
 
                             {% for sectionTwoImage in sectionTwoList %}
-                                <div class="owl-block">
-                                    <a class="dec0" href="#"><img class="gall1_pic" alt="gallery" src="{{ asset(sectionTwoImage.path) }}"><span class='gall-cont gall-slogan'>{{ sectionTwoImage.name }}</span></a>
+                                <div class="image-block">
+                                {% if is_granted('ROLE_USER') %}
+                                    <a href="{{ path('sagiterre_layout_deactivate_horse', {'id': sectionTwoImage.id }) }}"><i class="close fa fa-minus-circle"></i></a>
+                                {% endif %}
+                                    <div class="owl-block">
+                                        <a class="dec0" href="#"><img class="gall1_pic" alt="gallery" src="{{ asset(sectionTwoImage.path) }}"><span class='gall-cont gall-slogan'>{{ sectionTwoImage.name }}</span></a>
+                                    </div>
                                 </div>
+
                             {% else %}
                                 <h2>Il n'y pas d'images</h2>
                             {% endfor %}
+
 
                         </div>
                     </div>

@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="sg_layout_activities")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\ActivitiesRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Activities
 {
@@ -61,6 +62,13 @@ class Activities
         $this->dateAdd = new \DateTime();
     }
 
+    /**
+     * @ORM\PreUpdate
+     */
+    public function updateDate()
+    {
+        $this->setDateUpdate(new \DateTime());
+    }
 
     /**
      * Get id

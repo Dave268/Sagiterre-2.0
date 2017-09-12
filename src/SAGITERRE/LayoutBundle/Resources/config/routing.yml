@@ -87,3 +87,9 @@ sagiterre_layout_newsarchives_form:
     defaults: { _controller: SAGITERRELayoutBundle:Layout:modifyNewsArchives, id: 0 }
     options:
             expose: true
+
+sagiterre_layout_deactivate_horse:
+    path:     /deactivateHorse/{id}
+    defaults: { _controller: SAGITERRELayoutBundle:Layout:deactivateHorse, id: 0 }
+    options:
+            expose: true

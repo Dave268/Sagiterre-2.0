@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="sg_layout_slide_image")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\SlideImageRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class SlideImage
 {
@@ -52,6 +53,14 @@ class SlideImage
     public function __construct()
     {
         $this->dateAdd = new \DateTime();
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function updateDate()
+    {
+        $this->setDateUpdate(new \DateTime());
     }
 
 

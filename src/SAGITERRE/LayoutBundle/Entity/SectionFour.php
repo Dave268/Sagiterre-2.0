@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="sg_layout_section_four")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\SectionFourRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class SectionFour
 {
@@ -59,6 +60,14 @@ class SectionFour
     public function __construct()
     {
         $this->dateAdd = new \DateTime();
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function updateDate()
+    {
+        $this->setDateUpdate(new \DateTime());
     }
 
 

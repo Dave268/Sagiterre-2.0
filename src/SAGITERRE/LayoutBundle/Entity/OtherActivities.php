@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="sg_layout_other_activities")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\OtherActivitiesRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class OtherActivities
 {
@@ -102,6 +103,15 @@ class OtherActivities
     {
         $this->dateAdd = new \DateTime();
     }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function updateDate()
+    {
+        $this->setDateUpdate(new \DateTime());
+    }
+
 
 
     /**

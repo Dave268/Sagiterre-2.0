@@ -22,6 +22,8 @@ class AppKernel extends Kernel
             new SAGITERRE\UserBundle\SAGITERREUserBundle(),
             new SAGITERRE\AdminBundle\SAGITERREAdminBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new SAGITERRE\ActivityBundle\SAGITERREActivityBundle(),
+            new SAGITERRE\NewsBundle\SAGITERRENewsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

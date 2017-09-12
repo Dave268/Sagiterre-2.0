@@ -1,3 +1,11 @@
+sagiterre_news:
+    resource: "@SAGITERRENewsBundle/Resources/config/routing.yml"
+    prefix:   /news
+
+sagiterre_activity:
+    resource: "@SAGITERREActivityBundle/Resources/config/routing.yml"
+    prefix:   /activity
+
 sagiterre_admin:
     resource: "@SAGITERREAdminBundle/Resources/config/routing.yml"
     prefix:   /admin

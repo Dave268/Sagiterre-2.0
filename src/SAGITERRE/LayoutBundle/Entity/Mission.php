@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="sg_layout_mission")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\MissionRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Mission
 {
@@ -103,6 +104,13 @@ class Mission
         $this->dateAdd = new \DateTime();
     }
 
+    /**
+     * @ORM\PreUpdate
+     */
+    public function updateDate()
+    {
+        $this->setDateUpdate(new \DateTime());
+    }
 
     /**
      * Get id

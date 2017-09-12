@@ -1,0 +1,4 @@
+services:
+#    sagiterre_news.example:
+#        class: SAGITERRE\NewsBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

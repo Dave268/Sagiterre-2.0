@@ -1,0 +1,3 @@
+sagiterre_activity_add:
+    path:     /ajouter
+    defaults: { _controller: SAGITERREActivityBundle:Activity:index }

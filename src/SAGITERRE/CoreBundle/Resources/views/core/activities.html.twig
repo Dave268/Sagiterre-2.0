@@ -17,9 +17,7 @@
     <script src="{{ asset('js/TMForm.js') }}"></script>
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
-    {% if is_granted('ROLE_USER') %}
-        <script src="{{ asset('bundles/admin/js/script.js') }}"></script>
-    {% endif %}
+
 
 {% endblock %}
 
@@ -37,86 +35,31 @@
                     </div><!--/grid-->
                     <h3 class='left h-icon textToModify activities' data-id="{{ activities.id }}" data-part="activitiestitle">{{ activities.title }}</h3>
                     <p class='p2-sl-cont left textToModify activities' data-id="{{ activities.id }}" data-part="activitiessubtitle">{{ activities.subtitle }}</p>
+
+                    {% if is_granted('ROLE_USER') %}
+                        <div class="cont-block-p3">
+                            <div class="grid_4 mrg0 hidd">
+                                <a href="{{ path('sagiterre_activity_add') }}"><img class="c-block-pic" src="{{ asset('bundles/Layout/images/blackAct.jpg') }}" alt="pic"><i class="fa fa-plus-circle" style="font-size:50px; top: 50%; left: 50%;"></i></a>
+                                <p class='left p2-c-block-h2'></p>
+                                <p class='left p2-c-block-cont'> </p>
+                            </div><!--/grid-->
+                        </div>
+                    {% endif %}
+
+                {% for act in activity %}
                     <div class="cont-block-p3">
                         <div class="grid_4 mrg0 hidd">
-                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img01.jpg') }}" alt="pic"></a>
-                            <p class='left p2-c-block-h2'>Quisque consectetur id lectus eu.</p>
-                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
-                                ait nulla facilisi. Typi non habent clarit insitam. </p>
-                        </div><!--/grid-->
+                            <a href="#"><img class="c-block-pic" src="{{ asset( act.imgPath) }}" alt="{{ act.imgAlt }}"></a>
+                            <p class='left p2-c-block-h2'>{{ act.title }}</p>
+                            <p class='left p2-c-block-cont'>{{ act.intro }}</p>
+                        </div>
                     </div>
 
-                    <div class="cont-block-p3">
-                        <div class="grid_4 mrg0 hidd">
-                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img02.jpg') }}" alt="pic"></a>
-                            <p class='left p2-c-block-h2'>Dusto odio dignissim qui blandit.</p>
-                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
-                                ait nulla facilisi. Typi non habent clarit insitam.</p>
-                        </div>
-                    </div><!--/grid-->
+                    {% else %}
+                        <h2>Il n'y pas d'activités pour le moment</h2>
+                    {% endfor %}
 
-                    <div class="cont-block-p3 mrgn-r-0">
-                        <div class="grid_4 mrg0 hidd">
-                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img03.jpg') }}" alt="pic"></a>
-                            <p class='left p2-c-block-h2'>Suspendisse placerat varius ex.</p>
-                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
-                                ait nulla facilisi. Typi non habent clarit insitam. </p>
-                        </div>
-                    </div><!--/grid-->
 
-                    <div class="cont-block-p3">
-                        <div class="grid_4 mrg0 hidd">
-                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img04.jpg') }}" alt="pic"></a>
-                            <p class='left p2-c-block-h2'>Curabitur ornare volutpat sollicitudin.</p>
-                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
-                                ait nulla facilisi. Typi non habent clarit insitam.</p>
-                        </div>
-                    </div><!--/grid-->
-
-                    <div class="cont-block-p3">
-                        <div class="grid_4 mrg0 hidd">
-                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img05.jpg') }}" alt="pic"></a>
-                            <p class='left p2-c-block-h2'>Donec lobortis lacinia nisl quis sceleris.</p>
-                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
-                                ait nulla facilisi. Typi non habent clarit insitam. </p>
-                        </div>
-                    </div><!--/grid-->
-
-                    <div class="cont-block-p3 mrgn-r-0">
-                        <div class="grid_4 mrg0 hidd">
-                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img06.jpg') }}" alt="pic"></a>
-                            <p class='left p2-c-block-h2'>Vivamus elementum blandit massa.</p>
-                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
-                                ait nulla facilisi. Typi non habent clarit insitam. </p>
-                        </div>
-                    </div><!--/grid-->
-
-                    <div class="cont-block-p3">
-                        <div class="grid_4 mrg0 hidd">
-                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img07.jpg') }}" alt="pic"></a>
-                            <p class='left p2-c-block-h2'>Dusto odio dignissim qui blandit.</p>
-                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
-                                ait nulla facilisi. Typi non habent clarit insitam. </p>
-                        </div>
-                    </div><!--/grid-->
-
-                    <div class="cont-block-p3">
-                        <div class="grid_4 mrg0 hidd">
-                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img08.jpg') }}" alt="pic"></a>
-                            <p class='left p2-c-block-h2'>Suspendisse placerat varius ex.</p>
-                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
-                                ait nulla facilisi. Typi non habent clarit insitam. </p>
-                        </div>
-                    </div><!--/grid-->
-
-                    <div class="cont-block-p3 mrgn-r-0">
-                        <div class="grid_4 mrg0 hidd">
-                            <a href="#"><img class="c-block-pic" src="{{ asset('images/page-3_img09.jpg') }}" alt="pic"></a>
-                            <p class='left p2-c-block-h2'>Donec eu diam sagittis, gravida neque.</p>
-                            <p class='left p2-c-block-cont'>Praesent luptaum zzelenit augue duis dolore feug
-                                ait nulla facilisi. Typi non habent clarit insitam. </p>
-                        </div>
-                    </div><!--/grid-->
                 </div><!--/grid-->
             </div>
         </div>

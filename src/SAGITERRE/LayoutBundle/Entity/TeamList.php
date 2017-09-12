@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="sg_layout_team_list")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\TeamListRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class TeamList
 {
@@ -73,6 +74,14 @@ class TeamList
     public function __construct()
     {
         $this->dateAdd = new \DateTime();
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function updateDate()
+    {
+        $this->setDateUpdate(new \DateTime());
     }
 
 

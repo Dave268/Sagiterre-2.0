@@ -14,6 +14,7 @@ use SAGITERRE\LayoutBundle\Entity\SectionThreeOne;
 use SAGITERRE\LayoutBundle\Entity\SectionThreeThree;
 use SAGITERRE\LayoutBundle\Entity\SectionThreeTwo;
 use SAGITERRE\LayoutBundle\Entity\SectionTwo;
+use SAGITERRE\LayoutBundle\Entity\SectionTwoList;
 use SAGITERRE\LayoutBundle\Entity\SectionFour;
 use SAGITERRE\LayoutBundle\Entity\Team;
 use SAGITERRE\LayoutBundle\Entity\WelcomeMessage;
@@ -1211,6 +1212,21 @@ class LayoutController extends Controller
                     'form'          => $form->createView()));
             }
         }
+    }
+
+    public function deactivateHorseAction($id)
+    {
+        if ($this->get('security.authorization_checker')->isGranted('ROLE_USER')) {
+            $horse = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionTwoList')->find($id);
+            $em = $this->getDoctrine()->getManager();
+
+            $horse->deactivate();
+
+            $em->persist($horse);
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('sagiterre_core_homepage');
     }
 
 

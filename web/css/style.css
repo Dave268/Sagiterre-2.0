@@ -87,10 +87,11 @@ h4 {
   color: #cfb463;
   padding-bottom: 18px;
 }
-.height0 (
+.height0 {
   height: 0px;
   background: #f0f;
-) .p5-cont {
+}
+.p5-cont {
   font-size: 14px;
   margin-bottom: 27px;
 }
@@ -817,6 +818,19 @@ nav {
   background: none repeat scroll 0% 0% #fff;
   text-align: center;
 }
+
+.image-block
+{
+  position: relative;
+  z-index: 1;
+}
+.close {
+  position: absolute;
+  top: -5px;
+  right: -6px;
+  z-index: 100;
+  opacity: 1;
+}
 .owl-block:hover .gall2_pic {
   opacity: 0.4;
 }
@@ -826,6 +840,9 @@ nav {
 .owl-block:hover img {
   opacity: 0.4;
 }
+.add-block:hover {
+  opacity: 0.7;
+}
 .lt-ie9 .owl-block:hover img {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0.2)";
   filter: alpha(opacity=40);
@@ -833,6 +850,7 @@ nav {
 .owl-block:hover span {
   opacity: 1;
 }
+
 #owl2 .owl-block {
   height: 308px;
 }
@@ -847,6 +865,16 @@ nav {
   color: #150c07;
   position: relative;
   opacity: 0;
+  transition: all 0.4s ease 0s;
+}
+.add-icon {
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 600;
+  top: -137px;
+  color: #150c07;
+  position: relative;
+  opacity: 1;
   transition: all 0.4s ease 0s;
 }
 .gall2-slogan {
@@ -875,6 +903,23 @@ nav {
   transition: all 0.2s ease 0s;
   text-decoration: none;
 }
+.gall_black
+{
+  opacity: 0.2;
+  z-index: 1;
+}
+.gall-up
+{
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 600;
+  top: -137px;
+  color: #150c07;
+  position: relative;
+  opacity: 1;
+  transition: all 0.4s ease 0s;
+}
+
 .gall1_pic a {
   text-decoration: none;
 }
@@ -1382,6 +1427,9 @@ nav {
   .gall-slogan {
     top: -121px;
   }
+  .gall-up {
+    top: -121px;
+  }
   .circl2_pic {
     width: 180px !important;
     height: 180px;
@@ -1586,6 +1634,7 @@ nav {
   .cont-block1 .grid_2 {
     width: auto;
     float: left;
+
   }
   .btn-footer {
     font-size: 18px;
@@ -1944,3 +1993,130 @@ nav {
   }
 }
 /*Core variables and mixins*/
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  z-index: 1000;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.closeHorse {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeHorse:hover,
+.closeHorse:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+#confirmOverlay{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  background:url('ie.png');
+  background: -moz-linear-gradient(rgba(11,11,11,0.1), rgba(11,11,11,0.6)) repeat-x rgba(11,11,11,0.2);
+  background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(11,11,11,0.1)), to(rgba(11,11,11,0.6))) repeat-x rgba(11,11,11,0.2);
+  z-index:100000;
+}
+
+#confirmBox{
+  background:url('body_bg.jpg') repeat-x left bottom #e5e5e5;
+  width:460px;
+  position:fixed;
+  left:50%;
+  top:50%;
+  margin:-130px 0 0 -230px;
+  border: 1px solid rgba(33, 33, 33, 0.6);
+
+  -moz-box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
+  -webkit-box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
+}
+
+#confirmBox h1,
+#confirmBox p{
+  font:26px/1 'Cuprum','Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  background:url('header_bg.jpg') repeat-x left bottom #f5f5f5;
+  padding: 18px 25px;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+  color:#666;
+}
+
+#confirmBox h1{
+  letter-spacing:0.3px;
+  color:#888;
+}
+
+#confirmBox p{
+  background:none;
+  font-size:16px;
+  line-height:1.4;
+  padding-top: 35px;
+}
+
+#confirmButtons{
+  padding:15px 0 25px;
+  text-align:center;
+}
+
+#confirmBox .button{
+  display:inline-block;
+  background:url('buttons.png') no-repeat;
+  color:white;
+  position:relative;
+  height: 33px;
+
+  font:17px/33px 'Cuprum','Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+
+  margin-right: 15px;
+  padding: 0 35px 0 40px;
+  text-decoration:none;
+  border:none;
+}
+
+#confirmBox .button:last-child{ margin-right:0;}
+
+#confirmBox .button span{
+  position:absolute;
+  top:0;
+  right:-5px;
+  background:url('buttons.png') no-repeat;
+  width:5px;
+  height:33px
+}
+
+#confirmBox .blue{              background-position:left top;text-shadow:1px 1px 0 #5889a2;}
+#confirmBox .blue span{         background-position:-195px 0;}
+#confirmBox .blue:hover{        background-position:left bottom;}
+#confirmBox .blue:hover span{   background-position:-195px bottom;}
+
+#confirmBox .gray{              background-position:-200px top;text-shadow:1px 1px 0 #707070;}
+#confirmBox .gray span{         background-position:-395px 0;}
+#confirmBox .gray:hover{        background-position:-200px bottom;}
+#confirmBox .gray:hover span{   background-position:-395px bottom;}

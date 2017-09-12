@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="sg_layout_contact")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\ContactRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Contact
 {
@@ -82,6 +83,14 @@ class Contact
         $this->dateAdd = new \DateTime();
     }
 
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function updateDate()
+    {
+        $this->setDateUpdate(new \DateTime());
+    }
 
     /**
      * Get id

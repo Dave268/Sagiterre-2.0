@@ -5,6 +5,10 @@
     <meta charset="utf-8">
     <meta name = "format-detection" content = "telephone=no" />
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% if is_granted('ROLE_USER') %}
+        <script src="{{ asset('bundles/admin/js/script.js') }}"></script>
+    {% endif %}
 
     {% block head %}{% endblock %}
 
@@ -40,6 +44,9 @@
                     <li {% if app.request.get('_route') == 'sagiterre_core_activities' %} class="current" {% endif %}><a href="{{ path('sagiterre_core_activities') }}">Activités</a></li>
                     <li {% if app.request.get('_route') == 'sagiterre_core_news' %} class="current" {% endif %}><a href="{{ path('sagiterre_core_news') }}">News</a></li>
                     <li {% if app.request.get('_route') == 'sagiterre_core_contact' %} class="current" {% endif %}><a href="{{ path('sagiterre_core_contact') }}">Contact</a></li>
+                    {% if is_granted('ROLE_USER') %}
+                        <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>

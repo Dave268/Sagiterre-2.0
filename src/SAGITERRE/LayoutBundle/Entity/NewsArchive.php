@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="sg_layout_news_archive")
  * @ORM\Entity(repositoryClass="SAGITERRE\LayoutBundle\Repository\NewsArchiveRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class NewsArchive
 {
@@ -59,6 +60,14 @@ class NewsArchive
     public function __construct()
     {
         $this->dateAdd = new \DateTime();
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function updateDate()
+    {
+        $this->setDateUpdate(new \DateTime());
     }
 
 

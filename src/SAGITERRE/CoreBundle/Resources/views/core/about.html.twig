@@ -17,9 +17,6 @@
     <script src="{{ asset('js/TMForm.js') }}"></script>
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
-    {% if is_granted('ROLE_USER') %}
-        <script src="{{ asset('bundles/admin/js/script.js') }}"></script>
-    {% endif %}
 
 {% endblock %}
 
@@ -44,7 +41,7 @@
                         </div><!--/grid-->
                         <div class="grid_8 mrg0">
                             <p class='left p2-c-block-h padd-left textToModify about' data-id="{{ about.id }}" data-part="aboutintro">{{ about.intro }}</p>
-                            <p class='left c-block-dis2 padd-left textToModify about' data-id="{{ about.id }}" data-part="aboutcontent">{{ about.intro }}</p>
+                            <p class='left c-block-dis2 padd-left textToModify about' data-id="{{ about.id }}" data-part="aboutcontent">{{ about.content }}</p>
                             <!--<a class="p2-c-block-a padd-left" href="#">More</a>-->
                         </div><!--/grid-->
 

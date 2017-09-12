@@ -1,0 +1,4 @@
+services:
+#    sagiterre_activity.example:
+#        class: SAGITERRE\ActivityBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

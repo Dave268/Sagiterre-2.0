@@ -2,14 +2,11 @@
 
 namespace SAGITERRE\CoreBundle\Controller;
 
+use SAGITERRE\LayoutBundle\Form\SectionTwoListType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use SAGITERRE\LayoutBundle\Entity\WelcomeMessage;
-use SAGITERRE\LayoutBundle\Entity\SlideImage;
-use SAGITERRE\LayoutBundle\Entity\SectionTwo;
 use SAGITERRE\LayoutBundle\Entity\SectionTwoList;
-use SAGITERRE\LayoutBundle\Entity\SectionThreeOne;
-use SAGITERRE\LayoutBundle\Entity\SectionThreeTwo;
-use SAGITERRE\LayoutBundle\Entity\SectionThreeThree;
+use Symfony\Component\HttpFoundation\Request;
+
 
 
 
@@ -17,7 +14,7 @@ use SAGITERRE\LayoutBundle\Entity\SectionThreeThree;
 
 class CoreController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $welcomeMessage  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:WelcomeMessage')->findOneBy(array('active' => '1'));
         $slideImages = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SlideImage')->findBy(array('active' => '1'));
@@ -28,6 +25,37 @@ class CoreController extends Controller
         $sectionThreeThree  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionThreeThree')->findOneBy(array('active' => '1'));
         $sectionFour = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionFour')->findOneBy(array('active' => '1'));
         $sectionFive = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionFive')->findOneBy(array('active' => '1'));
+
+        if ($this->get('security.authorization_checker')->isGranted('ROLE_USER'))
+        {
+            $horse = new SectionTwoList();
+            $formHorse   = $this->get('form.factory')->create(SectionTwoListType::class, $horse);
+
+            if ($request->isMethod('POST') && $formHorse->handleRequest($request)->isValid()) {
+                // Ajoutez cette ligne :
+                // c'est elle qui déplace l'image là où on veut les stocker
+                $horse->upload();
+
+                // Le reste de la méthode reste inchangé
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($horse);
+                $em->flush();
+            }
+
+            return $this->render('SAGITERRECoreBundle:core:index.html.twig', array(
+                'WelcomeMessage'    => $welcomeMessage,
+                'slideImages'       => $slideImages,
+                'sectionTwo'        => $sectionTwo,
+                'sectionTwoList'    => $sectionTwoList,
+                'sectionThreeOne'   => $sectionThreeOne,
+                'sectionThreeTwo'   => $sectionThreeTwo,
+                'sectionThreeThree' => $sectionThreeThree,
+                'sectionFour'       => $sectionFour,
+                'sectionFive'       => $sectionFive,
+                'formHorse'         => $formHorse->createView(),
+            ));
+        }
+
 
 
 
@@ -67,11 +95,13 @@ class CoreController extends Controller
     {
         $activities = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:Activities')->findOneBy(array('active' => '1'));
         $otherActivities  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:OtherActivities')->findOneBy(array('active' => '1'));
+        $activity  = $this->getDoctrine()->getManager()->getRepository('SAGITERREActivityBundle:Activity')->findBy(array('active' => '1'));
 
 
         return $this->render('SAGITERRECoreBundle:core:activities.html.twig', array(
             'activities'        => $activities,
             'otheractivities'   => $otherActivities,
+            'activity'          => $activity,
         ));
     }
 

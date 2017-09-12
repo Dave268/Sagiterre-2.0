@@ -17,9 +17,7 @@
     <script src="{{ asset('js/TMForm.js') }}"></script>
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
-    {% if is_granted('ROLE_USER') %}
-        <script src="{{ asset('bundles/admin/js/script.js') }}"></script>
-    {% endif %}
+
 
 {% endblock %}
 
@@ -79,18 +77,21 @@
                         </div><!--/grid-->
                         <h3 class='left h-icon textToModify news' data-id="{{ news.id }}" data-part="newstitle">{{ news.title }}</h3>
                         <p class='sl-cont2 left textToModify news' data-id="{{ news.id }}" data-part="newssubtitle">{{ news.subtitle }}</p>
-                        <div class="cont-block1">
-                            <div class="grid_2 mrg0 hidd">
-                                <div class="pic-hov"></div>
-                                <img class="c-block-pic" src="{{ asset('images/page-4_img04.jpg') }}" alt="pic">
-                            </div><!--/grid-->
-                            <p class='left c-block-h'>Dusto odio dignissim qui blandit<br>
-                                praesent luptaum</p>
-                            <p class='c-block-date'>01<br>
-                                03</p>
-                            <p class='left c-block-dis'>Set accumsan et iusto odio dignissim qui blandit praesent luptaum zzelenit augue duis dolore te feugait nulla facilisi. Typi non habent claritatem</p>
-                            <a class="c-block-a" href="#">More</a>
-                        </div>
+
+    {% if is_granted('ROLE_USER') %}
+        <div class="cont-block1">
+            <div class="grid_2 mrg0 hidd">
+                <div class="pic-hov"></div>
+                <img class="c-block-pic" src="{{ asset('bundles/Layout/images/black.jpg') }}" alt="pic">
+            </div><!--/grid-->
+            <p class='left c-block-h'>Nouvelle News</p>
+            <p></br></p>
+            <!--<p class='c-block-date'>01<br>
+                03</p>
+            <p class='left c-block-dis'>Set accumsan et iusto odio dignissim qui blandit praesent luptaum zzelenit augue duis dolore te feugait nulla facilisi. Typi non habent claritatem</p>-->
+            <a class="c-block-a" href="#">Cliquez ici</a>
+        </div>
+        {% endif %}
                     </div><!--/grid-->
 
                     <div class="grid_6">
