@@ -46,13 +46,6 @@ class News
     private $content;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="date", type="string", length=255)
-     */
-    private $date;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateAdd", type="datetime")
@@ -186,29 +179,6 @@ class News
         return $this->content;
     }
 
-    /**
-     * Set date
-     *
-     * @param string $date
-     *
-     * @return News
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * Get date
-     *
-     * @return string
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
 
     /**
      * Set dateAdd

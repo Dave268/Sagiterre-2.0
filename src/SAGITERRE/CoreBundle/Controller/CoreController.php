@@ -20,11 +20,11 @@ class CoreController extends Controller
         $slideImages = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SlideImage')->findBy(array('active' => '1'));
         $sectionTwo = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionTwo')->findOneBy(array('active' => '1'));
         $sectionTwoList = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionTwoList')->findBy(array('active' => '1'));
-        $sectionThreeOne  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionThreeOne')->findOneBy(array('active' => '1'));
-        $sectionThreeTwo  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionThreeTwo')->findOneBy(array('active' => '1'));
-        $sectionThreeThree  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionThreeThree')->findOneBy(array('active' => '1'));
         $sectionFour = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionFour')->findOneBy(array('active' => '1'));
         $sectionFive = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionFive')->findOneBy(array('active' => '1'));
+
+        $news = $this->getDoctrine()->getManager()->getRepository('SAGITERRENewsBundle:News')->findBy(array('active' => '1'), array('id' => 'DESC'), 4, 0);
+
 
         if ($this->get('security.authorization_checker')->isGranted('ROLE_USER'))
         {
@@ -47,12 +47,10 @@ class CoreController extends Controller
                 'slideImages'       => $slideImages,
                 'sectionTwo'        => $sectionTwo,
                 'sectionTwoList'    => $sectionTwoList,
-                'sectionThreeOne'   => $sectionThreeOne,
-                'sectionThreeTwo'   => $sectionThreeTwo,
-                'sectionThreeThree' => $sectionThreeThree,
                 'sectionFour'       => $sectionFour,
                 'sectionFive'       => $sectionFive,
                 'formHorse'         => $formHorse->createView(),
+                'news'              => $news
             ));
         }
 
@@ -66,9 +64,6 @@ class CoreController extends Controller
             'slideImages'       => $slideImages,
             'sectionTwo'        => $sectionTwo,
             'sectionTwoList'    => $sectionTwoList,
-            'sectionThreeOne'   => $sectionThreeOne,
-            'sectionThreeTwo'   => $sectionThreeTwo,
-            'sectionThreeThree' => $sectionThreeThree,
             'sectionFour'       => $sectionFour,
             'sectionFive'       => $sectionFive,
 
@@ -81,13 +76,19 @@ class CoreController extends Controller
         $team = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:Team')->findOneBy(array('active' => '1'));
         $teamList = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:TeamList')->findBy(array('active' => '1'));
         $mission  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:Mission')->findOneBy(array('active' => '1'));
+        $sectionThreeOne  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionThreeOne')->findOneBy(array('active' => '1'));
+        $sectionThreeTwo  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionThreeTwo')->findOneBy(array('active' => '1'));
+        $sectionThreeThree  = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:SectionThreeThree')->findOneBy(array('active' => '1'));
 
 
         return $this->render('SAGITERRECoreBundle:core:about.html.twig', array(
-            'about'     => $about,
-            'team'      => $team,
-            'teamList'  => $teamList,
-            'mission'   => $mission,
+            'about'             => $about,
+            'team'              => $team,
+            'teamList'          => $teamList,
+            'mission'           => $mission,
+            'sectionThreeOne'   => $sectionThreeOne,
+            'sectionThreeTwo'   => $sectionThreeTwo,
+            'sectionThreeThree' => $sectionThreeThree,
         ));
     }
 
@@ -109,10 +110,12 @@ class CoreController extends Controller
     {
         $news = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:News')->findOneBy(array('active' => '1'));
         $newsArchives = $this->getDoctrine()->getManager()->getRepository('SAGITERRELayoutBundle:NewsArchive')->findOneBy(array('active' => '1'));
+        $newsPosted = $this->getDoctrine()->getManager()->getRepository('SAGITERRENewsBundle:News')->findBy(array('active' => '1'), array('id' => 'desc'));
 
         return $this->render('SAGITERRECoreBundle:core:news.html.twig', array(
             'news'              => $news,
-            'newsArchives'      => $newsArchives
+            'newsArchives'      => $newsArchives,
+            'newsPosted'        => $newsPosted
         ));
     }
 

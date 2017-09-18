@@ -1,0 +1,51 @@
+{# src/SAGITERRE/LayoutBundle/Resources/views/view/view.html.twig #}
+
+{% extends "SAGITERRECoreBundle::layout.html.twig" %}
+
+{% block title %}
+    Fiche: {{ team.name }}
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('css/grid.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contact-form.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/Activity/css/form.css') }}">
+
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery-migrate-1.2.1.js') }}"></script>
+    <script src="{{ asset('js/modal.js') }}"></script>
+    <script src="{{ asset('js/TMForm.js') }}"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+
+{% endblock %}
+
+
+{% block body %}
+    <div class="header-parall" data-stellar-background-ratio="0.8">
+    </div>
+    <div class="bg-secondary1">
+        <div class="container">
+            <div class="row">
+                <div class="grid_12 wow fadeInUp mrg0" data-wow-delay="0.2s">
+                    <div class="wow well_cont2 fadeInUp" data-wow-delay="0.2s">
+                        <h3 class='left h-icon'>{{ team.name }}</h3>
+                    </div><!--/grid-->
+
+                    <div class="grid_4 hidd">
+                        <img class="c-block-pic1" src="{{ asset(team.imagePath) }}" alt="{{ team.imageAlt }}">
+                    </div><!--/grid-->
+                    <div class="grid_8 mrg0">
+                        <p class='left p2-c-block-h'>{% autoescape %}{{ team.intro|raw }}{% endautoescape %}</p>
+                        <p class='left c-block-dis2'>{% autoescape %}{{ team.bio|raw }}{% endautoescape %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

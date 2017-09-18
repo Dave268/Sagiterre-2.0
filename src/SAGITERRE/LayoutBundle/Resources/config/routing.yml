@@ -97,3 +97,15 @@ sagiterre_layout_deactivate_horse:
 sagiterre_layout_add_team:
     path:     /ajouter-une-personne
     defaults: { _controller: SAGITERRELayoutBundle:Team:addTeam }
+
+sagiterre_layout_modify_team:
+    path:     /modifier-une-personne/{id}
+    defaults: { _controller: SAGITERRELayoutBundle:Team:modifyTeam, id: 0 }
+
+sagiterre_layout_view_team:
+    path:     /afficher-une-personne/{id}
+    defaults: { _controller: SAGITERRELayoutBundle:Team:showTeam, id: 0 }
+
+sagiterre_layout_deactivate_team:
+    path:     /désactiver-une-personne/{id}
+    defaults: { _controller: SAGITERRELayoutBundle:Team:deactivateTeam, id: 0 }

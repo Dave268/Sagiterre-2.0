@@ -5,3 +5,11 @@ sagiterre_core_news:
 sagiterre_core_news_add:
     path:     /ajouter-une-news
     defaults: { _controller: SAGITERRENewsBundle:News:add }
+
+sagiterre_core_news_modify:
+    path:     /modifier-une-news/{id}
+    defaults: { _controller: SAGITERRENewsBundle:News:modify, id: 0 }
+
+sagiterre_core_news_view:
+    path:     /afficher-une-news/{id}
+    defaults: { _controller: SAGITERRENewsBundle:News:view, id: 0 }

@@ -80,13 +80,6 @@ class TeamList
         $this->dateAdd = new \DateTime();
     }
 
-    /**
-     * @ORM\PreUpdate
-     */
-    public function updateDate()
-    {
-        $this->setDateUpdate(new \DateTime());
-    }
 
 
     /**
