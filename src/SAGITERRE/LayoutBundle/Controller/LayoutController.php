@@ -59,6 +59,9 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'welcometitle'  && $formData['message'] != $welcomeMessage->getTitle()) OR ($part == 'welcomesubtitle'  && $formData['message'] != $welcomeMessage->getSubtitle()) OR ($part == 'welcomecolumnone'  && $formData['message'] != $welcomeMessage->getColumnOne()) OR ($part == 'welcomecolumntwo'  && $formData['message'] != $welcomeMessage->getColumnTwo()) OR ($part == 'welcomecolumnthree'  && $formData['message'] != $welcomeMessage->getColumnThree())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($welcomeMessage->getTitle());
                         $newMessage->setSubtitle($welcomeMessage->getSubtitle());
                         $newMessage->setColumnOne($welcomeMessage->getColumnOne());
@@ -66,15 +69,15 @@ class LayoutController extends Controller
                         $newMessage->setColumnThree($welcomeMessage->getColumnThree());
 
                         if ($part == 'welcometitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         } elseif ($part == 'welcomesubtitle') {
-                            $newMessage->setSubitle($formData['message']);
+                            $newMessage->setSubitle($message);
                         } elseif ($part == 'welcomecolumnone') {
-                            $newMessage->setColumnOne($formData['message']);
+                            $newMessage->setColumnOne($message);
                         } elseif ($part == 'welcomecolumntwo') {
-                            $newMessage->setColumnTwo($formData['message']);
+                            $newMessage->setColumnTwo($message);
                         } elseif ($part == 'welcomecolumnthree') {
-                            $newMessage->setColumnThree($formData['message']);
+                            $newMessage->setColumnThree($message);
                         }
 
                         $welcomeMessage->setActive(false);
@@ -141,13 +144,16 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'sectiontwotitle'  && $formData['message'] != $sectionTwo->getTitle()) OR ($part == 'sectiontwosubtitle'  && $formData['message'] != $sectionTwo->getSubtitle())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($sectionTwo->getTitle());
                         $newMessage->setSubtitle($sectionTwo->getSubtitle());
 
                         if ($part == 'sectiontwotitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         } elseif ($part == 'sectiontwosubtitle') {
-                            $newMessage->setSubitle($formData['message']);
+                            $newMessage->setSubitle($message);
                         }
 
                         $sectionTwo->setActive(false);
@@ -214,6 +220,9 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'sectionthreeonetitle'  && $formData['message'] != $sectionThreeOne->getTitle()) OR ($part == 'sectionthreeonesubtitle'  && $formData['message'] != $sectionThreeOne->getSubtitle()) OR ($part == 'sectionthreeonecontent'  && $formData['message'] != $sectionThreeOne->getContent())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($sectionThreeOne->getTitle());
                         $newMessage->setSubtitle($sectionThreeOne->getSubtitle());
                         $newMessage->setContent($sectionThreeOne->getContent());
@@ -222,13 +231,13 @@ class LayoutController extends Controller
 
 
                         if ($part == 'sectionthreeonetitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         }
                         elseif ($part == 'sectionthreeonesubtitle') {
-                            $newMessage->setSubtitle($formData['message']);
+                            $newMessage->setSubtitle($message);
                         }
                         elseif ($part == 'sectionthreeonecontent') {
-                            $newMessage->setContent($formData['message']);
+                            $newMessage->setContent($message);
                         }
 
                         $sectionThreeOne->setActive(false);
@@ -295,6 +304,9 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'sectionthreetwotitle' && $formData['message'] != $sectionThreeTwo->getTitle()) OR ($part == 'sectionthreetwosubtitle'  && $formData['message'] != $sectionThreeTwo->getSubtitle()) OR ($part == 'sectionthreetwocontent'  && $formData['message'] != $sectionThreeTwo->getContent())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($sectionThreeTwo->getTitle());
                         $newMessage->setSubtitle($sectionThreeTwo->getSubtitle());
                         $newMessage->setContent($sectionThreeTwo->getContent());
@@ -302,13 +314,13 @@ class LayoutController extends Controller
                         $newMessage->setImagePath($sectionThreeTwo->getImagePath());
 
                         if ($part == 'sectionthreetwotitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         }
                         elseif ($part == 'sectionthreetwosubtitle') {
-                            $newMessage->setSubtitle($formData['message']);
+                            $newMessage->setSubtitle($message);
                         }
                         elseif ($part == 'sectionthreetwocontent') {
-                            $newMessage->setContent($formData['message']);
+                            $newMessage->setContent($message);
                         }
 
                         $sectionThreeTwo->setActive(false);
@@ -375,6 +387,9 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'sectionthreethreetitle'  && $formData['message'] != $sectionThreeThree->getTitle()) OR ($part == 'sectionthreethreesubtitle'  && $formData['message'] != $sectionThreeThree->getSubtitle()) OR ($part == 'sectionthreethreecontent'  && $formData['message'] != $sectionThreeThree->getContent())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($sectionThreeThree->getTitle());
                         $newMessage->setSubtitle($sectionThreeThree->getSubtitle());
                         $newMessage->setContent($sectionThreeThree->getContent());
@@ -384,13 +399,13 @@ class LayoutController extends Controller
 
 
                         if ($part == 'sectionthreethreetitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         }
                         elseif ($part == 'sectionthreethreesubtitle') {
-                            $newMessage->setSubtitle($formData['message']);
+                            $newMessage->setSubtitle($message);
                         }
                         elseif ($part == 'sectionthreethreecontent') {
-                            $newMessage->setContent($formData['message']);
+                            $newMessage->setContent($message);
                         }
 
                         $sectionThreeThree->setActive(false);
@@ -457,13 +472,16 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'sectionfourtitle'  && $formData['message'] != $sectionFour->getTitle()) OR ($part == 'sectionfoursubtitle'  && $formData['message'] != $sectionFour->getSubtitle())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($sectionFour->getTitle());
                         $newMessage->setSubtitle($sectionFour->getSubtitle());
 
                         if ($part == 'sectionfourtitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         } elseif ($part == 'sectionfoursubtitle') {
-                            $newMessage->setSubitle($formData['message']);
+                            $newMessage->setSubitle($message);
                         }
 
                         $sectionFour->setActive(false);
@@ -530,13 +548,16 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'sectionfivetitle'  && $formData['message'] != $sectionFive->getTitle()) OR ($part == 'sectionfivesubtitle'  && $formData['message'] != $sectionFive->getSubtitle())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($sectionFive->getTitle());
                         $newMessage->setSubtitle($sectionFive->getSubtitle());
 
                         if ($part == 'sectionfivetitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         } elseif ($part == 'sectionfivesubtitle') {
-                            $newMessage->setSubitle($formData['message']);
+                            $newMessage->setSubitle($message);
                         }
 
                         $sectionFive->setActive(false);
@@ -603,6 +624,9 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'abouttitle'  && $formData['message'] != $about->getTitle()) OR ($part == 'aboutsubtitle'  && $formData['message'] != $about->getSubtitle()) OR ($part == 'aboutintro'  && $formData['message'] != $about->getIntro()) OR ($part == 'aboutcontent'  && $formData['message'] != $about->getContent())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($about->getTitle());
                         $newMessage->setSubtitle($about->getSubtitle());
                         $newMessage->setIntro($about->getIntro());
@@ -611,13 +635,13 @@ class LayoutController extends Controller
                         $newMessage->setImagePath($about->getImagePath());
 
                         if ($part == 'abouttitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         } elseif ($part == 'aboutsubtitle') {
-                            $newMessage->setSubtitle($formData['message']);
+                            $newMessage->setSubtitle($message);
                         } elseif ($part == 'aboutintro') {
-                            $newMessage->setIntro($formData['message']);
+                            $newMessage->setIntro($message);
                         } elseif ($part == 'aboutcontent') {
-                            $newMessage->setContent($formData['message']);
+                            $newMessage->setContent($message);
                         }
 
                         $about->setActive(false);
@@ -684,13 +708,16 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'teamtitle'  && $formData['message'] != $team->getTitle()) OR ($part == 'teamsubtitle'  && $formData['message'] != $team->getSubtitle())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($team->getTitle());
                         $newMessage->setSubtitle($team->getSubtitle());
 
                         if ($part == 'teamtitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         } elseif ($part == 'teamsubtitle') {
-                            $newMessage->setSubtitle($formData['message']);
+                            $newMessage->setSubtitle($message);
                         }
 
                         $team->setActive(false);
@@ -757,6 +784,9 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'missiontitle'  && $formData['message'] != $mission->getTitle()) OR ($part == 'missionsubtitle'  && $formData['message'] != $mission->getSubtitle()) OR ($part == 'missioncolumnoneintro'  && $formData['message'] != $mission->getColumnOneIntro()) OR ($part == 'missioncolumnonecontent'  && $formData['message'] != $mission->getColumnOneContent()) OR ($part == 'missioncolumntwointro'  && $formData['message'] != $mission->getColumnTwoIntro()) OR ($part == 'missioncolumntwocontent'  && $formData['message'] != $mission->getColumnTwoContent()) OR ($part == 'missioncolumnthreeintro'  && $formData['message'] != $mission->getColumnThreeIntro()) OR ($part == 'missioncolumnthreecontent'  && $formData['message'] != $mission->getColumnThreeContent())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($mission->getTitle());
                         $newMessage->setSubtitle($mission->getSubtitle());
                         $newMessage->setColumnOneIntro($mission->getColumnOneIntro());
@@ -768,21 +798,21 @@ class LayoutController extends Controller
 
 
                         if ($part == 'missiontitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         } elseif ($part == 'missionsubtitle') {
-                            $newMessage->setSubtitle($formData['message']);
+                            $newMessage->setSubtitle($message);
                         } elseif ($part == 'missioncolumnoneintro') {
-                            $newMessage->setColumnOneIntro($formData['message']);
+                            $newMessage->setColumnOneIntro($message);
                         } elseif ($part == 'missioncolumnonecontent') {
-                            $newMessage->setColumnOneContent($formData['message']);
+                            $newMessage->setColumnOneContent($message);
                         } elseif ($part == 'missioncolumntwointro') {
-                            $newMessage->setColumnTwoIntro($formData['message']);
+                            $newMessage->setColumnTwoIntro($message);
                         } elseif ($part == 'missioncolumntwocontent') {
-                            $newMessage->setColumnTwoContent($formData['message']);
+                            $newMessage->setColumnTwoContent($message);
                         } elseif ($part == 'missioncolumnthreeintro') {
-                            $newMessage->setColumnThreeIntro($formData['message']);
+                            $newMessage->setColumnThreeIntro($message);
                         } elseif ($part == 'missioncolumnthreecontent') {
-                            $newMessage->setColumnThreeContent($formData['message']);
+                            $newMessage->setColumnThreeContent($message);
                         }
 
                         $mission->setActive(false);
@@ -848,13 +878,16 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'activitiestitle'  && $formData['message'] != $activities->getTitle()) OR ($part == 'activitiessubtitle'  && $formData['message'] != $activities->getSubtitle())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($activities->getTitle());
                         $newMessage->setSubtitle($activities->getSubtitle());
 
                         if ($part == 'activitiestitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         } elseif ($part == 'activitiessubtitle') {
-                            $newMessage->setSubtitle($formData['message']);
+                            $newMessage->setSubtitle($message);
                         }
 
                         $activities->setActive(false);
@@ -921,6 +954,9 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'otheractivitiestitle'  && $formData['message'] != $otherAct->getTitle()) OR ($part == 'otheractivitiessubtitle'  && $formData['message'] != $otherAct->getSubtitle()) OR ($part == 'otheractivitiescolumnoneintro'  && $formData['message'] != $otherAct->getColumnOneIntro()) OR ($part == 'otheractivitiescolumnonecontent'  && $formData['message'] != $otherAct->getColumnOneContent()) OR ($part == 'otheractivitiescolumntwointro'  && $formData['message'] != $otherAct->getColumnTwoIntro()) OR ($part == 'otheractivitiescolumntwocontent'  && $formData['message'] != $otherAct->getColumnTwoContent()) OR ($part == 'otheractivitiescolumnthreeintro'  && $formData['message'] != $otherAct->getColumnThreeIntro()) OR ($part == 'otheractivitiescolumnthreecontent'  && $formData['message'] != $otherAct->getColumnThreeContent())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($otherAct->getTitle());
                         $newMessage->setSubtitle($otherAct->getSubtitle());
                         $newMessage->setColumnOneIntro($otherAct->getColumnOneIntro());
@@ -932,21 +968,21 @@ class LayoutController extends Controller
 
 
                         if ($part == 'otheractivitiestitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         } elseif ($part == 'otheractivitiessubtitle') {
-                            $newMessage->setSubtitle($formData['message']);
+                            $newMessage->setSubtitle($message);
                         } elseif ($part == 'otheractivitiescolumnoneintro') {
-                            $newMessage->setColumnOneIntro($formData['message']);
+                            $newMessage->setColumnOneIntro($message);
                         } elseif ($part == 'otheractivitiescolumnonecontent') {
-                            $newMessage->setColumnOneContent($formData['message']);
+                            $newMessage->setColumnOneContent($message);
                         } elseif ($part == 'otheractivitiescolumntwointro') {
-                            $newMessage->setColumnTwoIntro($formData['message']);
+                            $newMessage->setColumnTwoIntro($message);
                         } elseif ($part == 'otheractivitiescolumntwocontent') {
-                            $newMessage->setColumnTwoContent($formData['message']);
+                            $newMessage->setColumnTwoContent($message);
                         } elseif ($part == 'otheractivitiescolumnthreeintro') {
-                            $newMessage->setColumnThreeIntro($formData['message']);
+                            $newMessage->setColumnThreeIntro($message);
                         } elseif ($part == 'otheractivitiescolumnthreecontent') {
-                            $newMessage->setColumnThreeContent($formData['message']);
+                            $newMessage->setColumnThreeContent($message);
                         }
 
                         $otherAct->setActive(false);
@@ -1012,6 +1048,9 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'contacttitle'  && $formData['message'] != $contact->getTitle()) OR ($part == 'contactsubtitle'  && $formData['message'] != $contact->getSubtitle()) OR ($part == 'contactadress'  && $formData['message'] != $contact->getAdress()) OR ($part == 'contactphone'  && $formData['message'] != $contact->getPhone()) OR ($part == 'contactmail'  && $formData['message'] != $contact->getMail())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($contact->getTitle());
                         $newMessage->setSubtitle($contact->getSubtitle());
                         $newMessage->setAdress($contact->getAdress());
@@ -1020,15 +1059,15 @@ class LayoutController extends Controller
 
 
                         if ($part == 'contacttitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         } elseif ($part == 'contactsubtitle') {
-                            $newMessage->setSubtitle($formData['message']);
+                            $newMessage->setSubtitle($message);
                         } elseif ($part == 'contactadress') {
-                            $newMessage->setAdress($formData['message']);
+                            $newMessage->setAdress($message);
                         } elseif ($part == 'contactphone') {
-                            $newMessage->setPhone($formData['message']);
+                            $newMessage->setPhone($message);
                         } elseif ($part == 'contactmail') {
-                            $newMessage->setMail($formData['message']);
+                            $newMessage->setMail($message);
                         }
 
                         $contact->setActive(false);
@@ -1094,13 +1133,16 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'newstitle'  && $formData['message'] != $news->getTitle()) OR ($part == 'newssubtitle'  && $formData['message'] != $news->getSubtitle())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($news->getTitle());
                         $newMessage->setSubtitle($news->getSubtitle());
 
                         if ($part == 'newstitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         } elseif ($part == 'newssubtitle') {
-                            $newMessage->setSubtitle($formData['message']);
+                            $newMessage->setSubtitle($message);
                         }
 
                         $news->setActive(false);
@@ -1167,13 +1209,16 @@ class LayoutController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     if(($part == 'newsarchivestitle'  && $formData['message'] != $news->getTitle()) OR ($part == 'newsarchivessubtitle'  && $formData['message'] != $news->getSubtitle())) {
+                        $message = str_replace("<div>", "", $formData['message']);
+                        $message = str_replace("</div>", "", $message);
+                        $message = str_replace("&nbsp;", "", $message);
                         $newMessage->setTitle($news->getTitle());
                         $newMessage->setSubtitle($news->getSubtitle());
 
                         if ($part == 'newsarchivestitle') {
-                            $newMessage->setTitle($formData['message']);
+                            $newMessage->setTitle($message);
                         } elseif ($part == 'newsarchivessubtitle') {
-                            $newMessage->setSubtitle($formData['message']);
+                            $newMessage->setSubtitle($message);
                         }
 
                         $news->setActive(false);
