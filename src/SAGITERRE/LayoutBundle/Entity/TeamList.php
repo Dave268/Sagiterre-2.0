@@ -3,6 +3,8 @@
 namespace SAGITERRE\LayoutBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 
 /**
  * TeamList
@@ -70,6 +72,8 @@ class TeamList
      * @ORM\Column(name="active", type="boolean", nullable=true)
      */
     private $active = true;
+
+    private $file;
 
     public function __construct()
     {
@@ -261,5 +265,56 @@ class TeamList
     public function getActive()
     {
         return $this->active;
+    }
+
+    public function uploadImage()
+    {
+        if (null === $this->name) {
+            return;
+        }
+
+        $name = $this->file->getClientOriginalName();
+        $this->imageAlt = $this->name;
+
+        $this->file->move($this->getUploadRootDir(), $name);
+
+        // On sauvegarde le nom de fichier dans notre attribut $url
+        $this->imagePath = $this->getUploadDir() . $name;
+
+    }
+
+    public function getUploadDir()
+    {
+        // On retourne le chemin relatif vers l'image pour un navigateur (relatif au répertoire /web donc)
+        return 'bundles/Layout/images/';
+    }
+
+    protected function getUploadRootDir()
+    {
+        // On retourne le chemin relatif vers l'image pour notre code PHP
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    public function deactivate()
+    {
+        if($this->active == 1)
+        {
+            $this->active = 0;
+        }
+        else{
+            $this->active = 1;
+        }
+
+        return $this;
+    }
+
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    public function setFile(UploadedFile $file = null)
+    {
+        $this->file = $file;
     }
 }

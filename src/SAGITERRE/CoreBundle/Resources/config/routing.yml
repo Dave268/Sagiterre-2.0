@@ -10,9 +10,9 @@ sagiterre_core_activities:
     path:     /activites
     defaults: { _controller: SAGITERRECoreBundle:Core:activities }
 
-sagiterre_core_news:
-    path:     /news
-    defaults: { _controller: SAGITERRECoreBundle:Core:news }
+sagiterre_core_testform:
+    path:     /testform
+    defaults: { _controller: SAGITERRECoreBundle:Core:test }
 
 sagiterre_core_contact:
     path:     /contact

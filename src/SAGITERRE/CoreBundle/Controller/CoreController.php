@@ -124,4 +124,11 @@ class CoreController extends Controller
             'contact'       => $contact,
         ));
     }
+
+    public function testAction()
+    {
+
+        return $this->render('SAGITERRECoreBundle:core:test.html.twig', array(
+        ));
+    }
 }

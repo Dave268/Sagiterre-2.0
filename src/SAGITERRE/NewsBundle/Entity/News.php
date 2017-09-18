@@ -3,6 +3,8 @@
 namespace SAGITERRE\NewsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 
 /**
  * News
@@ -84,6 +86,8 @@ class News
      * @ORM\Column(name="imgPath", type="string", length=255)
      */
     private $imgPath;
+
+    private $file;
 
 
     public function __construct()
@@ -324,6 +328,57 @@ class News
     public function getImgPath()
     {
         return $this->imgPath;
+    }
+
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    public function setFile(UploadedFile $file = null)
+    {
+        $this->file = $file;
+    }
+
+    public function uploadImage()
+    {
+        if (null === $this->file) {
+            return;
+        }
+
+        $name = $this->file->getClientOriginalName();
+        $this->imgAlt = $this->title;
+
+        $this->file->move($this->getUploadRootDir(), $name);
+
+        // On sauvegarde le nom de fichier dans notre attribut $url
+        $this->imgPath = $this->getUploadDir() . $name;
+
+    }
+
+    public function getUploadDir()
+    {
+        // On retourne le chemin relatif vers l'image pour un navigateur (relatif au répertoire /web donc)
+        return 'bundles/News/images/';
+    }
+
+    protected function getUploadRootDir()
+    {
+        // On retourne le chemin relatif vers l'image pour notre code PHP
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    public function deactivate()
+    {
+        if($this->active == 1)
+        {
+            $this->active = 0;
+        }
+        else{
+            $this->active = 1;
+        }
+
+        return $this;
     }
 }
 

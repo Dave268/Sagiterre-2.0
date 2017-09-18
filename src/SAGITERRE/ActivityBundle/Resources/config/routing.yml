@@ -1,3 +1,15 @@
 sagiterre_activity_add:
     path:     /ajouter
-    defaults: { _controller: SAGITERREActivityBundle:Activity:index }
+    defaults: { _controller: SAGITERREActivityBundle:Activity:add }
+
+sagiterre_activity_modify:
+    path:     /modifier/{id}
+    defaults: { _controller: SAGITERREActivityBundle:Activity:modify, id: 0 }
+
+sagiterre_activity_show:
+    path:     /activité/{id}
+    defaults: { _controller: SAGITERREActivityBundle:Activity:show, id: 0 }
+
+sagiterre_activity_deactivate:
+    path:     /desactiver/{id}
+    defaults: { _controller: SAGITERREActivityBundle:Activity:deactivate, id: 0 }

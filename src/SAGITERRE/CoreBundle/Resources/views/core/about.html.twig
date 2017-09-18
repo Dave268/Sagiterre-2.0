@@ -18,6 +18,12 @@
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
 
+    {% if is_granted('ROLE_USER') %}
+        <!--<link rel="stylesheet" href="{{ asset('bundles/admin/editor/css/documentation.css') }}">-->
+        <script src="{{ asset('bundles/admin/editor/js/jquery.classyedit.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('bundles/admin/editor/css/jquery.classyedit.css') }}">
+    {% endif %}
+
 {% endblock %}
 
 
@@ -40,8 +46,8 @@
                             <img class="c-block-pic1" src="{{ asset(about.imagePath) }}" alt="{{ about.imageAlt }}">
                         </div><!--/grid-->
                         <div class="grid_8 mrg0">
-                            <p class='left p2-c-block-h padd-left textToModify about' data-id="{{ about.id }}" data-part="aboutintro">{{ about.intro }}</p>
-                            <p class='left c-block-dis2 padd-left textToModify about' data-id="{{ about.id }}" data-part="aboutcontent">{{ about.content }}</p>
+                            <p class='left p2-c-block-h padd-left textToModify about' data-id="{{ about.id }}" data-part="aboutintro">{% autoescape %}{{ about.intro|raw }}{% endautoescape %}</p>
+                            <p class='left c-block-dis2 padd-left textToModify about' data-id="{{ about.id }}" data-part="aboutcontent">{% autoescape %}{{ about.content|raw }}{% endautoescape %}</p>
                             <!--<a class="p2-c-block-a padd-left" href="#">More</a>-->
                         </div><!--/grid-->
 
@@ -63,6 +69,15 @@
                         <h3 class='left h-icon textToModify team' data-id="{{ team.id }}" data-part="teamtitle">{{ team.title }}</h3>
                         <p class='p2-sl-cont left textToModify team'  data-id="{{ team.id }}" data-part="teamsubtitle">{{ team.subtitle }}</p>
 
+        {% if is_granted('ROLE_USER') %}
+                        <div class="cont-block mrgn-r-0">
+                            <div class="grid_3 mrg0 hidd">
+                                <a href="#"><img class="c-block-pic" src="" alt=""></a>
+                                <p class='left p2-c-block-h2'>Nouvelle Personne</p>
+                                <p class='left p2-c-block-cont'><a href="{{ path('sagiterre_layout_add_team') }}">Cliquez-ici</a></p>
+                            </div>
+                        </div>
+        {% endif %}
                         {% for teamMate in teamList %}
                             <div class="cont-block mrgn-r-0">
                                 <div class="grid_3 mrg0 hidd">
@@ -90,18 +105,18 @@
                         <h3 class='left h-icon textToModify mission' data-id="{{ mission.id }}" data-part="missiontitle">{{ mission.title }}</h3>
                         <p class='p2-sl-cont2 left textToModify mission' data-id="{{ mission.id }}" data-part="missionsubtitle">{{ mission.subtitle }}</p>
                         <div class="grid_4 mrg0">
-                            <p class='left p2-c-block-h3 textToModify mission' data-id="{{ mission.id }}" data-part="missioncolumnoneintro">{{ mission.columnOneIntro }}</p>
-                            <p class='left box-cont2 textToModify mission' data-id="{{ mission.id }}" data-part="missioncolumnonecontent">{{ mission.columnOneContent }}</p>
+                            <p class='left p2-c-block-h3 textToModify mission' data-id="{{ mission.id }}" data-part="missioncolumnoneintro">{% autoescape %}{{ mission.columnOneIntro|raw }}{% endautoescape %}</p>
+                            <p class='left box-cont2 textToModify mission' data-id="{{ mission.id }}" data-part="missioncolumnonecontent">{% autoescape %}{{ mission.columnOneContent|raw }}{% endautoescape %}</p>
                         </div><!--/grid-->
 
                         <div class="grid_4">
-                            <p class='left p2-c-block-h3 textToModify mission' data-id="{{ mission.id }}" data-part="missioncolumntwointro">{{ mission.columnTwoIntro }}</p>
-                            <p class='left box-cont2 textToModify mission' data-id="{{ mission.id }}" data-part="missioncolumntwocontent">{{ mission.columnTwoContent }}</p>
+                            <p class='left p2-c-block-h3 textToModify mission' data-id="{{ mission.id }}" data-part="missioncolumntwointro">{% autoescape %}{{ mission.columnTwoIntro|raw }}{% endautoescape %}</p>
+                            <p class='left box-cont2 textToModify mission' data-id="{{ mission.id }}" data-part="missioncolumntwocontent">{% autoescape %}{{ mission.columnTwoContent|raw }}{% endautoescape %}</p>
                         </div><!--/grid-->
 
                         <div class="grid_4">
-                            <p class='left p2-c-block-h3 textToModify mission' data-id="{{ mission.id }}" data-part="missioncolumnthreeintro">{{ mission.columnThreeIntro }}</p>
-                            <p class='left box-cont2 textToModify mission' data-id="{{ mission.id }}" data-part="missioncolumnthreecontent">{{ mission.columnThreeContent }}</p>
+                            <p class='left p2-c-block-h3 textToModify mission' data-id="{{ mission.id }}" data-part="missioncolumnthreeintro">{% autoescape %}{{ mission.columnThreeIntro|raw }}{% endautoescape %}</p>
+                            <p class='left box-cont2 textToModify mission' data-id="{{ mission.id }}" data-part="missioncolumnthreecontent">{% autoescape %}{{ mission.columnThreeContent|raw }}{% endautoescape %}</p>
                         </div><!--/grid-->
                     </div><!--/grid-->
                 </div>

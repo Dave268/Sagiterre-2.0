@@ -1,0 +1,65 @@
+{# src/SAGITERRE/ActivityBundle/Resources/views/form/form.html.twig #}
+
+{% extends "SAGITERRECoreBundle::layout.html.twig" %}
+
+{% block title %}
+    Ajouter une personne
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('css/grid.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contact-form.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/Activity/css/form.css') }}">
+
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery-migrate-1.2.1.js') }}"></script>
+    <script src="{{ asset('js/modal.js') }}"></script>
+    <script src="{{ asset('js/TMForm.js') }}"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+
+{% endblock %}
+
+
+{% block body %}
+    <div class="header-parall" data-stellar-background-ratio="0.8">
+    </div>
+    <div class="bg-secondary2">
+        <div class="container">
+            <div class="row">
+                <div class="grid_12 wow fadeInUp well_cont3" data-wow-delay="0.2s">
+
+                    {{ form_start(form, {'attr': {'class': 'formActivity'}}) }}
+                    {{ form_errors(form) }}
+
+                    {{ form_label(form.name, "Nom de la personne:") }}
+                    {{ form_errors(form.name) }}
+                    {{ form_widget(form.name) }}
+
+                    {{ form_label(form.intro, "Résumé:") }}
+                    {{ form_errors(form.intro) }}
+                    {{ form_widget(form.intro) }}
+
+                    {{ form_label(form.bio, "Bio:") }}
+                    {{ form_errors(form.bio) }}
+                    {{ form_widget(form.bio) }}
+
+                    {{ form_label(form.file, "Image pour l'activité:") }}
+                    {{ form_errors(form.file) }}
+                    {{ form_widget(form.file) }}
+
+                    {{ form_widget(form.save) }}
+
+                    {{ form_rest(form) }}
+                    {{ form_end(form) }}
+
+                </div><!--/grid-->
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

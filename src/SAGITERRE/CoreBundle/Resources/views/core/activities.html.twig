@@ -18,6 +18,12 @@
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
 
+    {% if is_granted('ROLE_USER') %}
+        <!--<link rel="stylesheet" href="{{ asset('bundles/admin/editor/css/documentation.css') }}">-->
+        <script src="{{ asset('bundles/admin/editor/js/jquery.classyedit.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('bundles/admin/editor/css/jquery.classyedit.css') }}">
+    {% endif %}
+
 
 {% endblock %}
 
@@ -39,9 +45,11 @@
                     {% if is_granted('ROLE_USER') %}
                         <div class="cont-block-p3">
                             <div class="grid_4 mrg0 hidd">
-                                <a href="{{ path('sagiterre_activity_add') }}"><img class="c-block-pic" src="{{ asset('bundles/Layout/images/blackAct.jpg') }}" alt="pic"><i class="fa fa-plus-circle" style="font-size:50px; top: 50%; left: 50%;"></i></a>
-                                <p class='left p2-c-block-h2'></p>
-                                <p class='left p2-c-block-cont'> </p>
+                                <img class="c-block-pic" src="{{ asset('bundles/Layout/images/blackAct.jpg') }}" alt="pic">
+                                <p class='left p2-c-block-h2'>Nouvelle Actvivité</p>
+                                <p class='left p2-c-block-cont'><a class="c-block-a" href="{{ path('sagiterre_activity_add') }}">Cliquez ici</a></p>
+
+
                             </div><!--/grid-->
                         </div>
                     {% endif %}
@@ -49,7 +57,10 @@
                 {% for act in activity %}
                     <div class="cont-block-p3">
                         <div class="grid_4 mrg0 hidd">
-                            <a href="#"><img class="c-block-pic" src="{{ asset( act.imgPath) }}" alt="{{ act.imgAlt }}"></a>
+                            {% if is_granted('ROLE_USER') %}
+                                <a href="{{ path('sagiterre_activity_deactivate', {'id': act.id}) }}"><i class="close fa fa-minus-circle"></i></a>
+                            {% endif %}
+                            <a href="{% if is_granted('ROLE_USER') %}{{ path('sagiterre_activity_modify', {'id': act.id}) }}{% else %}{{ path('sagiterre_activity_show', {'id': act.id}) }}{% endif %}"><img class="c-block-pic" src="{{ asset( act.imgPath) }}" alt="{{ act.imgAlt }}"></a>
                             <p class='left p2-c-block-h2'>{{ act.title }}</p>
                             <p class='left p2-c-block-cont'>{{ act.intro }}</p>
                         </div>
@@ -75,20 +86,20 @@
                     <h3 class='left h-icon textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiestitle">{{ otheractivities.title }}</h3>
                     <p class='p2-sl-cont2 left padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiessubtitle">{{ otheractivities.subtitle }}</p>
                     <div class="grid_4 mrg0">
-                        <p class='left p2-c-block-h3 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumnoneintro">{{ otheractivities.columnOneIntro }}</p>
-                        <p class='left c-block-dis2 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumnonecontent">{{ otheractivities.columnOneContent}} </p></br>
+                        <p class='left p2-c-block-h3 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumnoneintro">{% autoescape %}{{ otheractivities.columnOneIntro|raw }}{% endautoescape %}</p>
+                        <p class='left c-block-dis2 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumnonecontent">{% autoescape %}{{ otheractivities.columnOneContent|raw }}{% endautoescape %}</p></br>
                         <!--<a class="p2-c-block-a" href="#">More</a>-->
                     </div><!--/grid-->
 
                     <div class="grid_4">
-                        <p class='left p2-c-block-h3 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumntwointro">{{ otheractivities.columnTwoIntro }}</p>
-                        <p class='left c-block-dis2 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumntwocontent">{{ otheractivities.columnTwoContent}} </p></br>
+                        <p class='left p2-c-block-h3 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumntwointro">{% autoescape %}{{ otheractivities.columnTwoIntro|raw }}{% endautoescape %}</p>
+                        <p class='left c-block-dis2 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumntwocontent">{% autoescape %}{{ otheractivities.columnTwoContent|raw }}{% endautoescape %}</p></br>
                         <!--<a class="p2-c-block-a" href="#">More</a>-->
                     </div><!--/grid-->
 
                     <div class="grid_4">
-                        <p class='left p2-c-block-h3 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumnthreeintro">{{ otheractivities.columnThreeIntro }}</p>
-                        <p class='left c-block-dis2 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumnthreeintro">{{ otheractivities.columnThreeContent }} </p></br>
+                        <p class='left p2-c-block-h3 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumnthreeintro">{% autoescape %}{{ otheractivities.columnThreeIntro|raw }}{% endautoescape %}</p>
+                        <p class='left c-block-dis2 padd-right textToModify otheractivities' data-id="{{ otheractivities.id }}" data-part="otheractivitiescolumnthreeintro">{% autoescape %}{{ otheractivities.columnThreeContent|raw }}{% endautoescape %}</p></br>
                         <!--<a class="p2-c-block-a" href="#">More</a>-->
                     </div><!--/grid-->
                 </div><!--/grid-->

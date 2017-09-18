@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>jQuery ClassyLoupe plugin demo</title>
+    <link rel="stylesheet" href="{{ asset('bundles/admin/editor/css/documentation.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{{ asset('bundles/admin/editor/js/jquery.classyedit.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('bundles/admin/editor/css/jquery.classyedit.css') }}">
+</head>
+<body>
+
+                    <section class="clearfix">
+                        <div> <br />
+                            <br />
+                            <textarea class="classy-editor"></textarea>
+                            <br />
+                            <br />
+                            <script>
+                                $(document).ready(function() {
+                                    $(".classy-editor").ClassyEdit();
+                                });
+                            </script>
+                        </div>
+                    </section>
+
+</body>
+</html>

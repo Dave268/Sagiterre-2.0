@@ -367,5 +367,18 @@ class Activity
         // On retourne le chemin relatif vers l'image pour notre code PHP
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
+
+    public function deactivate()
+    {
+        if($this->active == 1)
+        {
+            $this->active = 0;
+        }
+        else{
+            $this->active = 1;
+        }
+
+        return $this;
+    }
 }
 

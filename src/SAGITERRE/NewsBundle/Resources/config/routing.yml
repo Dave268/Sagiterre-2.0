@@ -1,3 +1,7 @@
-sagiterre_news_homepage:
+sagiterre_core_news:
     path:     /
-    defaults: { _controller: SAGITERRENewsBundle:Default:index }
+    defaults: { _controller: SAGITERRECoreBundle:Core:news }
+
+sagiterre_core_news_add:
+    path:     /ajouter-une-news
+    defaults: { _controller: SAGITERRENewsBundle:News:add }

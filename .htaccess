@@ -2,5 +2,5 @@
     RewriteEngine On
     RewriteBase /
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*)$ /web/$1 [QSA,L]
+    RewriteRule ^(.*)$ web/$1 [QSA,L]
 </IfModule>

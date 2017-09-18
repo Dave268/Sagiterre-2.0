@@ -93,3 +93,7 @@ sagiterre_layout_deactivate_horse:
     defaults: { _controller: SAGITERRELayoutBundle:Layout:deactivateHorse, id: 0 }
     options:
             expose: true
+
+sagiterre_layout_add_team:
+    path:     /ajouter-une-personne
+    defaults: { _controller: SAGITERRELayoutBundle:Team:addTeam }

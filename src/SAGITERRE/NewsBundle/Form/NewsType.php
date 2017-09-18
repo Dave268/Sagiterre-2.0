@@ -3,8 +3,12 @@
 namespace SAGITERRE\NewsBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class NewsType extends AbstractType
 {
@@ -13,7 +17,12 @@ class NewsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')->add('intro')->add('content')->add('date')->add('dateAdd')->add('dateUpdate')->add('active')->add('imgAlt')->add('imgPath');
+        $builder
+            ->add('title',      TextType::class)
+            ->add('intro',      TextareaType::class)
+            ->add('content',    TextareaType::class)
+            ->add('file',       FileType::class, array('required' => false))
+            ->add('save',       SubmitType::class);
     }
     
     /**

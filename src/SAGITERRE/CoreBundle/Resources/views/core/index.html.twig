@@ -8,6 +8,7 @@
 
 
 {% block head %}
+
     <link rel="stylesheet" href="{{ asset('css/grid.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -21,6 +22,17 @@
     <script src="{{ asset('js/TMForm.js') }}"></script>
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+    {% if is_granted('ROLE_USER') %}
+        <!--<link rel="stylesheet" href="{{ asset('bundles/admin/editor/css/documentation.css') }}">-->
+        <script src="{{ asset('bundles/admin/editor/js/jquery.classyedit.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('bundles/admin/editor/css/jquery.classyedit.css') }}">
+    {% endif %}
+
+    <style>
+        i {  font-style: italic;  }
+        b {  font-weight: bold;  }
+    </style>
 
 
 {% endblock %}
@@ -64,7 +76,7 @@
                         </div>--><!--/grid-->
 
                         <div class="grid_3">
-                            <p class='icon-box-cont textToModify welcome' data-id="{{ WelcomeMessage.id }}" data-part="welcomecolumnone">{{ WelcomeMessage.columnOne }}</p>
+                            <p class='icon-box-cont textToModify welcome' data-id="{{ WelcomeMessage.id }}" data-part="welcomecolumnone">{% autoescape %}{{ WelcomeMessage.columnOne|raw }}{% endautoescape %}</p>
                         </div><!--/grid-->
                     </div><!--/grid-->
                     <div class="grid_4 wow fadeInUp" data-wow-delay="0.4s">
@@ -73,7 +85,7 @@
                         </div>-->
                         <!--/grid-->
                         <div class="grid_3">
-                            <p class='icon-box-cont textToModify welcome' data-id="{{ WelcomeMessage.id }}" data-part="welcomecolumntwo">{{ WelcomeMessage.columnTwo }}
+                            <p class='icon-box-cont textToModify welcome' data-id="{{ WelcomeMessage.id }}" data-part="welcomecolumntwo">{% autoescape %}{{ WelcomeMessage.columnTwo|raw }}{% endautoescape %}
                             </p>
                         </div><!--/grid-->
                     </div><!--/grid-->
@@ -83,12 +95,14 @@
                         </div>-->
                         <!--/grid-->
                         <div class="grid_3">
-                            <p class='icon-box-cont textToModify welcome' data-id="{{ WelcomeMessage.id }}" data-part="welcomecolumnthree">{{ WelcomeMessage.columnThree }}</p>
+                            <p class='icon-box-cont textToModify welcome' data-id="{{ WelcomeMessage.id }}" data-part="welcomecolumnthree">{% autoescape %}{{ WelcomeMessage.columnThree|raw }}{% endautoescape %}</p>
                         </div><!--/grid-->
                     </div><!--/grid-->
                 </div>
             </div>
         </div>
+
+
         <!-- end stellar layout -->
 
         <!-- Owl Carousel -->
@@ -147,7 +161,7 @@
                             <h3 class='left h-icon textToModify sectionthreeone' data-id="{{ sectionThreeOne.id }}" data-part="sectionthreeonetitle">{{ sectionThreeOne.title }}</h3>
                             <p class='sl-cont3 left textToModify sectionthreeone' data-id="{{ sectionThreeOne.id }}" data-part="sectionthreeonesubtitle">{{ sectionThreeOne.subtitle }}</p>
                             <img src="{{ asset(sectionThreeOne.imagePath) }}" alt="{{ asset(sectionThreeOne.imageAlt) }}">
-                            <p class='left box-cont2 textToModify sectionthreeone' data-id="{{ sectionThreeOne.id }}" data-part="sectionthreeonecontent">{{ sectionThreeOne.content }}</p>
+                            <p class='left box-cont2 textToModify sectionthreeone' data-id="{{ sectionThreeOne.id }}" data-part="sectionthreeonecontent">{% autoescape %}{{ sectionThreeOne.content|raw }}{% endautoescape %}</p>
                         </div><!--/grid-->
 
                         <div class="grid_4 hidd">
@@ -157,7 +171,7 @@
                             <h3 class='left h-icon textToModify sectionthreetwo' data-id="{{ sectionThreeTwo.id }}" data-part="sectionthreetwotitle">{{ sectionThreeTwo.title }}</h3>
                             <p class='sl-cont3 left textToModify sectionthreetwo' data-id="{{ sectionThreeTwo.id }}" data-part="sectionthreetwosubtitle">{{ sectionThreeTwo.subtitle }}</p>
                             <img src="{{ asset(sectionThreeTwo.imagePath) }}" alt="{{ asset(sectionThreeTwo.imageAlt) }}">
-                            <p class='left box-cont2 textToModify sectionthreetwo' data-id="{{ sectionThreeTwo.id }}" data-part="sectionthreetwocontent">{{ sectionThreeOne.content }}</p>
+                            <p class='left box-cont2 textToModify sectionthreetwo' data-id="{{ sectionThreeTwo.id }}" data-part="sectionthreetwocontent">{% autoescape %}{{ sectionThreeOne.content|raw }}{% endautoescape %}</p>
                         </div><!--/grid-->
 
                         <div class="grid_4 hidd">
@@ -167,28 +181,28 @@
                             <h3 class='left h-icon textToModify sectionthreethree' data-id="{{ sectionThreeThree.id }}" data-part="sectionthreethreetitle">{{ sectionThreeThree.title }}</h3>
                             <p class='sl-cont3 left textToModify sectionthreethree' data-id="{{ sectionThreeThree.id }}" data-part="sectionthreethreesubtitle">{{ sectionThreeThree.subtitle }}</p>
                             <img src="{{ asset(sectionThreeThree.imagePath) }}" alt="{{ asset(sectionThreeThree.imageAlt) }}" >
-                            <p class='left box-cont2 textToModify sectionthreethree' data-id="{{ sectionThreeThree.id }}" data-part="sectionthreethreecontent">{{ sectionThreeThree.content }}</p>
+                            <p class='left box-cont2 textToModify sectionthreethree' data-id="{{ sectionThreeThree.id }}" data-part="sectionthreethreecontent">{% autoescape %}{{ sectionThreeThree.content|raw }}{% endautoescape %}</p>
                         </div><!--/grid-->
                     </div><!--/grid-->
                 </div>
             </div>
         </div>
 
-        <div class="bg-secondary2">
+    {% if is_granted('ROLE_USER') %}<div class="bg-secondary2">
             <div class="container">
                 <div class="row">
                     <div class="grid_12 wow fadeInUp well_cont1" data-wow-delay="0.2s">
                         <div class="grid_6 mrg0">
                             <div class="grid_1 mrg0">
                                 <img src="{{ asset('images/icons/logo.png') }}" alt="ico">
-                            </div><!--/grid-->
+                            </div>
                             <h3 class='left h-icon textToModify sectionfour' data-id="{{ sectionFour.id }}" data-part="sectionfourtitle">{{ sectionFour.title }}</h3>
                             <p class='sl-cont2 left textToModify' data-id="{{ sectionFour.id }}" data-part="sectionfoursubtitle">{{ sectionFour.subtitle }}</p>
                             <div class="cont-block1">
                                 <div class="grid_2 mrg0 hidd">
                                     <div class="pic-hov"></div>
                                     <img class="c-block-pic" src="{{ asset('images/page-1_crs1_p3.jpg') }}" alt="pic">
-                                </div><!--/grid-->
+                                </div>
                                 <p class='left c-block-h'>Dusto odio dignissim qui blandit<br>
                                     praesent luptaum</p>
                                 <p class='c-block-date'>21<br>
@@ -196,14 +210,14 @@
                                 <p class='left c-block-dis'>Set accumsan et iusto odio dignissim qui blandit praesent luptaum zzelenit augue duis dolore te feugait nulla facilisi. Typi non habent claritatem</p>
                                 <a class="c-block-a" href="#">More</a>
                             </div>
-                        </div><!--/grid-->
+                        </div>
 
                         <div class="grid_6">
                             <div class="cont-block1 cont-bl2">
                                 <div class="grid_2 mrg0 hidd">
                                     <div class="pic-hov"></div>
                                     <img class="c-block-pic" src="{{ asset('images/page-1_crs1_p5.jpg') }}" alt="pic">
-                                </div><!--/grid-->
+                                </div>
                                 <p class="left c-block-h">Dusto odio dignissim qui blandit<br>
                                     praesent luptaum</p>
                                 <p class="c-block-date">21<br>
@@ -211,14 +225,14 @@
                                 <p class="left c-block-dis">Set accumsan et iusto odio dignissim qui blandit praesent luptaum zzelenit augue duis dolore te feugait nulla facilisi. Typi non habent claritatem</p>
                                 <a class="c-block-a" href="#">More</a>
                             </div>
-                        </div><!--/grid-->
-                    </div><!--/grid-->
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div>{% endif %}
 
         <!-- Owl Carousel -->
-        <div class="bg-secondary1">
+        <div class="bg-secondary2">
             <div class="container">
                 <div class="row">
                     <div class="wow well_cont1 fadeInUp" data-wow-delay="0.2s">
@@ -270,5 +284,11 @@
                 </div>
             </div>
         </div>
-        <!-- end Owl Carousel -->
+
+    <script>
+        $(document).ready(function() {
+
+        });
+    </script>
+    <!-- end Owl Carousel -->
 {% endblock %}

@@ -18,6 +18,12 @@
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
 
+    {% if is_granted('ROLE_USER') %}
+        <!--<link rel="stylesheet" href="{{ asset('bundles/admin/editor/css/documentation.css') }}">-->
+        <script src="{{ asset('bundles/admin/editor/js/jquery.classyedit.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('bundles/admin/editor/css/jquery.classyedit.css') }}">
+    {% endif %}
+
 
 {% endblock %}
 

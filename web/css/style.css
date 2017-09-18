@@ -825,10 +825,10 @@ nav {
   z-index: 1;
 }
 .close {
-  position: absolute;
-  top: -5px;
-  right: -6px;
-  z-index: 100;
+  position: relative;
+  top: Opx;
+  right: 0px;
+  z-index: 1000;
   opacity: 1;
 }
 .owl-block:hover .gall2_pic {
